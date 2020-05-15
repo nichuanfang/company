@@ -39,7 +39,7 @@ public class User extends BaseEntity{
     /**
      * 是否可用
      */
-    @TableField("IS_ACTIVE")
+    @TableField("ACCOUNT_STATUS")
     @EnumValue
     private AccountStatus accountStatus;
 }
