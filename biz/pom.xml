@@ -11,7 +11,7 @@
     <artifactId>biz</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>biz</name>
-    <description>biz</description>
+    <description>暴露服务模块</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -46,8 +46,9 @@
         </dependency>
         <dependency>
             <groupId>com.jaychouzzz</groupId>
-            <artifactId>security</artifactId>
+            <artifactId>sms</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 </project>

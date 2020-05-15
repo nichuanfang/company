@@ -1,4 +1,4 @@
-package com.jaychouzzz.biz.web.controller;
+package com.jaychouzzz.biz.web.controller.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +15,6 @@ public class TemplateController {
     @RequestMapping(value = "/index")
     public String index() {
         return "index";
-    }
-
-    @RequestMapping(value = "/register")
-    public String register() {
-        return "register";
     }
 
     @RequestMapping(value = "/signin")

@@ -1,7 +1,9 @@
 package com.jaychouzzz.common.entity;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.jaychouzzz.common.enums.AccountStatus;
 import lombok.Data;
 
 /**
@@ -34,4 +36,10 @@ public class User extends BaseEntity{
      */
     @TableField("COMPANY_NAME")
     private String companyName;
+    /**
+     * 是否可用
+     */
+    @TableField("IS_ACTIVE")
+    @EnumValue
+    private AccountStatus accountStatus;
 }

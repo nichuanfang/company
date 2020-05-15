@@ -25,6 +25,11 @@ public class BaseEntity{
     @TableField("CREATE_DATE")
     private Date createDate;
     /**
+     * 更新时间
+     */
+    @TableField("UPDATE_DATE")
+    private Date updateDate;
+    /**
      * 删除时间
      */
     @TableField("DELETE_DATE")

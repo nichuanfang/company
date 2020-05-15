@@ -20,6 +20,11 @@ public class SecurityProperties {
     @NestedConfigurationProperty
     private LoginProperties login;
     /**
+     * 注册相关配置
+     */
+    @NestedConfigurationProperty
+    private RegisterProperties register;
+    /**
      * 短信验证码相关配置
      */
     @NestedConfigurationProperty

@@ -21,4 +21,9 @@ public class AuthenticationController {
     public String handleLoginPage() {
         return "signin";
     }
+
+    @RequestMapping(value = "/register")
+    public String register() {
+        return "register";
+    }
 }

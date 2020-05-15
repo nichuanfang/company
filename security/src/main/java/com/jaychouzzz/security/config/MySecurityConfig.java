@@ -41,7 +41,9 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //授权配置
                 .authorizeRequests()
-                .antMatchers(securityProperties.getLogin().getLoginPage())
+                .antMatchers(securityProperties.getLogin().getLoginPage()
+                        ,securityProperties.getRegister().getRegisterUrl()
+                        ,securityProperties.getRegister().getRegisterProcessingUrl())
                 .permitAll()
                 //剩下的请求需要认证
                 .anyRequest()

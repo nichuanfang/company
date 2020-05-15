@@ -26,6 +26,9 @@ jaychouzzz:
     sms:
       code-length: 4
       expire-time: 60
+    register:
+      register-url: /register
+      register-processing-url: /handleRegister
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml

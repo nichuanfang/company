@@ -1,4 +1,4 @@
-package com.jaychouzzz.biz.web.controller;
+package com.jaychouzzz.biz.web.controller.principal;
 
 import com.jaychouzzz.biz.web.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;

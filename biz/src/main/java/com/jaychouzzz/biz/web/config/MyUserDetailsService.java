@@ -1,4 +1,4 @@
-package com.jaychouzzz.biz.web.service;
+package com.jaychouzzz.biz.web.config;
 
 import com.jaychouzzz.biz.web.mapper.UserMapper;
 import com.jaychouzzz.security.config.MySecurityConfig;
