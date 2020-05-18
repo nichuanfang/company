@@ -26,7 +26,7 @@ class BizApplicationTests {
         user.setPassword(encode);
         user.setCompanyName("znjt");
         user.setPhoneNumber("18326186224");
-        user.setPkId(122222);
+        user.setPkId("");
         userMapper.insert(user);
     }
 

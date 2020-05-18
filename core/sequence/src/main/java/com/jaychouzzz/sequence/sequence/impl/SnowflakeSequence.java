@@ -3,6 +3,13 @@ package com.jaychouzzz.sequence.sequence.impl;
 
 import com.jaychouzzz.sequence.exception.SeqException;
 import com.jaychouzzz.sequence.sequence.Sequence;
+import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.SystemUtils;
+
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
+
 
 /**
  * 使用雪花算法
@@ -174,4 +181,5 @@ public class SnowflakeSequence implements Sequence {
 	public String nextNo() throws SeqException {
 		return String.valueOf(nextValue());
 	}
+
 }

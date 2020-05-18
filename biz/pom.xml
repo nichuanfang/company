@@ -54,6 +54,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.jaychouzzz</groupId>
+            <artifactId>sequence</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 </project>

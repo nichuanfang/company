@@ -23,5 +23,5 @@ class BaseSequenceProperties {
 	/**
 	 * 业务名称
 	 */
-	private String bizName = "pigx";
+	private String bizName = "jaychouzzz";
 }

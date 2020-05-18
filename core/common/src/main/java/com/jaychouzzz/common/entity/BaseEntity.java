@@ -18,7 +18,7 @@ public class BaseEntity{
      * 主键
      */
     @TableId(type = IdType.AUTO,value = "PK_ID")
-    private Integer pkId;
+    private String pkId;
     /**
      * 创建时间
      */

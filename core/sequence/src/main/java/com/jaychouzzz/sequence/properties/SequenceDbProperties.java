@@ -17,12 +17,12 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "pigx.xsequence.db")
+@ConfigurationProperties(prefix = "jaychouzzz.xsequence.db")
 public class SequenceDbProperties extends BaseSequenceProperties {
 	/**
 	 * 表名称
 	 */
-	private String tableName = "pigx_sequence";
+	private String tableName = "jaychouzzz_sequence";
 	/**
 	 * 重试次数
 	 */

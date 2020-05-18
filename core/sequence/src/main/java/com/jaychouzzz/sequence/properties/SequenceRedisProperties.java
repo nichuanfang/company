@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "pigx.xsequence.redis")
+@ConfigurationProperties(prefix = "jaychouzzz.xsequence.redis")
 public class SequenceRedisProperties extends BaseSequenceProperties {
 
 }

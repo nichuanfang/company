@@ -31,7 +31,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2019-05-26
  */
 @Configuration
-@ComponentScan("com.pig4cloud.pigx.common.sequence")
+@ComponentScan("com.jaychouzzz.sequence")
 @ConditionalOnMissingBean(Sequence.class)
 public class SequenceAutoConfiguration {
 

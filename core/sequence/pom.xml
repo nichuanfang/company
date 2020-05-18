@@ -13,10 +13,6 @@
     <name>sequence</name>
     <description>分布式序列号生成器</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

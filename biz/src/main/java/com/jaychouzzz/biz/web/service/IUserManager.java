@@ -1,6 +1,7 @@
 package com.jaychouzzz.biz.web.service;
 
 import com.jaychouzzz.common.entity.User;
+import com.jaychouzzz.common.vo.RegisterVo;
 
 /**
  * @Classname IUserManager
@@ -15,4 +16,12 @@ public interface IUserManager {
      * @param user 用户实体
      */
     public void createAccount(User user);
+
+    /**
+     * 注册用户
+     * @param registerVo 注册vo
+     * @param token 用户主体
+     * @return 页面名称
+     */
+    String register(RegisterVo registerVo, String token);
 }

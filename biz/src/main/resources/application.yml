@@ -2,11 +2,13 @@ server:
   port: 9000
 
 spring:
+  application:
+    name: company
   datasource:
     url: jdbc:mysql://localhost:3306/company
     username: root
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
 #  模板引擎配置
   thymeleaf:
     cache: false
@@ -29,6 +31,19 @@ jaychouzzz:
     register:
       register-url: /register
       register-processing-url: /handleRegister
+#  雪花算法配置
+  xsequence:
+    snowflake:
+#      业务名称
+      biz-name: company
+#      步长
+      step: 1100
+#      起始值
+      step-start: 0
+#      数据中心id
+#      datacenter-id: ${DATACENTER-ID:08209270}
+#      机器id
+#      worker-id: ${SPRING.APPLICATION.NAME:company}
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml

@@ -13,10 +13,6 @@
     <name>security</name>
     <description>安全模块</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
