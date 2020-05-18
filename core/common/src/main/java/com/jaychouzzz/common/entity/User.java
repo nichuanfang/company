@@ -1,8 +1,10 @@
 package com.jaychouzzz.common.entity;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.handlers.MybatisEnumTypeHandler;
 import com.jaychouzzz.common.enums.AccountStatus;
 import lombok.Data;
 
@@ -16,6 +18,8 @@ import lombok.Data;
 @Data
 @TableName("USER")
 public class User extends BaseEntity{
+
+    private static final long serialVersionUID = -6192312499636458166L;
     /**
      * 用户名
      */
@@ -39,7 +43,6 @@ public class User extends BaseEntity{
     /**
      * 是否可用
      */
-    @TableField("ACCOUNT_STATUS")
-    @EnumValue
+    @TableField(value = "ACCOUNT_STATUS")
     private AccountStatus accountStatus;
 }

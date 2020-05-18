@@ -47,4 +47,5 @@ jaychouzzz:
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
+  type-enums-package: com.jaychouzzz.common.enums
 
