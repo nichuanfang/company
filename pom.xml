@@ -16,10 +16,8 @@
     <description>company</description>
 
     <modules>
-        <module>security</module>
-        <module>common</module>
         <module>biz</module>
-        <module>sms</module>
+        <module>core</module>
     </modules>
 
     <properties>
