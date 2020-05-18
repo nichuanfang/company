@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <title>Login</title>
     <!-- Meta tag Keywords -->
@@ -34,7 +33,6 @@
     <!-- /Fonts -->
     <link href="../static/css/googleapis.poppins.css" rel="stylesheet">
     <link href="../static/css/googleapis.playfair.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -94,54 +92,61 @@
     </header>
     <!-- //header -->
     <!-- banner-w3layouts -->
-    <section class="banner-w3layouts">
+    <section class="banner-w3layouts" style="
+    padding-top: 77px">
         <div class="container">
             <div class="row banner-w3layouts-grids">
                 <div class="col-lg-5 sign-info" data-aos="fade-right">
                     <h3>Create Account</h3>
                     <p class="para-sign mt-2 mb-4 text-center">Enter your email and password to get sign in.</p>
-                    <form action="#" method="post">
+                    <form action="#" method="post" id="registerForm" onsubmit="return onSubmit()">
                         <div class="form-group">
-
                             <label>Name*</label>
                             <div class="icon1">
-                                <input placeholder="" name="username" type="text" required="required">
+                                <input id="username"  placeholder="" name="username" type="text" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-
-                            <label>Email*</label>
+                            <label>Email</label>
                             <div class="icon1">
-                                <input placeholder="" name="mail" type="email" required="required">
+                                <input placeholder="" id="email" name="mail" type="email" >
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Phone Number*</label>
+                            <label>Phone Number</label>
                             <div class="icon2">
-                                <input placeholder="" name="phone" type="text" required="required">
+                                <input placeholder="" id="phone" name="phone" type="text" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <div class="icon2">
+                                <input placeholder="" id="companyName" name="companyName" type="text">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Password*</label>
                             <div class="icon2">
-                                <input placeholder="" name="password" type="password" required="required">
+                                <input placeholder="" id="password" name="password" type="password" required="required">
                             </div>
                         </div>
                         <input type="submit" value="Create Account">
+<!--                        <button id="submitbtn" type="button" onclick="ok()">Create Account</button>-->
                         <p class="para-sign mt-3">Already have an Account ? <a href="/signin" class="ml-2"><strong>Sign
                             in to your Account</strong></a>
                         </p>
                     </form>
-                    <div class="col-lg-7 banner-w3layouts-image pl-md-5">
-                        <div class="effect-w3">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image1">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image2">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image3">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image4">
-                        </div>
+                </div>
 
+                <div class="col-lg-7 banner-w3layouts-image pl-md-5">
+                    <div class="effect-w3">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image1">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image2">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image3">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image4">
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -242,7 +247,7 @@
 
                 <div class="login px-4 mx-auto mw-100">
                     <h5 class="text-left mb-4">Login Now</h5>
-                    <form action="/handleRegister" method="post">
+                    <form action="#" method="post">
                         <div class="form-group">
                             <label class="mb-2">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
@@ -288,7 +293,6 @@
                     <form action="#" method="post">
                         <div class="form-group">
                             <label>First name</label>
-
                             <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
                         </div>
                         <div class="form-group">
@@ -304,7 +308,6 @@
                             <label>Confirm Password</label>
                             <input type="password" class="form-control" id="password2" placeholder="" required="">
                         </div>
-
                         <button type="submit" class="btn btn-primary submit mb-4">Register</button>
                         <p class="text-left pb-4">
                             <a href="#">By clicking Register, I agree to your terms</a>
@@ -332,6 +335,7 @@
 <!--/ start-smoth-scrolling -->
 <script src="../static/js/move-top.js"></script>
 <script src="../static/js/easing.js"></script>
+<script src="../static/js/base64.min.js"></script>
 <script>
     jQuery(document).ready(function ($) {
         $(".scroll").click(function (event) {
@@ -359,6 +363,39 @@
         });
 
     });
+
+    function ok() {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        $.ajax({
+            type: "POST",
+            url: "/handleRegister",
+            data: {
+                "mail": $("#email").val(),
+                "phone": $("#phone").val(),
+                "companyName": $("#companyName").val()
+            },
+            dataType: "json",
+            headers: {
+                "Authentication": transform(username,password)
+            },
+            success: function (response) {
+                alert(response)
+            }
+
+        })
+    }
+    //对用户名密码进行base64加密 返回authentication头
+    function transform(username, password) {
+        var token = username+':'+password;
+        return 'Basic '+Base64.encode(token);
+    }
+
+    function onSubmit() {
+        ok();
+        //阻止默认表单提交,同时保留默认验证策略
+        return false;
+    }
 
 </script>
 <!--// end-smoth-scrolling -->

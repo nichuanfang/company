@@ -12,10 +12,6 @@ import lombok.Data;
 @Data
 public class RegisterVo {
     /**
-     * 用户名
-     */
-    private String username;
-    /**
      * 邮箱
      */
     private String mail;
@@ -24,7 +20,7 @@ public class RegisterVo {
      */
     private String phone;
     /**
-     * 密码
+     * 公司名称
      */
-    private String password;
+    private String companyName;
 }
