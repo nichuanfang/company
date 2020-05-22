@@ -43,7 +43,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(securityProperties.getLogin().getLoginPage()
                         ,securityProperties.getRegister().getRegisterUrl()
-                        ,securityProperties.getRegister().getRegisterProcessingUrl())
+                        ,securityProperties.getRegister().getRegisterProcessingUrl(),"/captcha/get","/captcha/check")
                 .permitAll()
                 //剩下的请求需要认证
                 .anyRequest()

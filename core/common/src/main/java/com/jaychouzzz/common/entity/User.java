@@ -40,6 +40,12 @@ public class User extends BaseEntity{
      */
     @TableField("COMPANY_NAME")
     private String companyName;
+
+    /**
+     * 邮件地址
+     */
+    @TableField("MAIL")
+    private String mail;
     /**
      * 是否可用
      */

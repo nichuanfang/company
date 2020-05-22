@@ -5,6 +5,8 @@ import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 import com.jaychouzzz.biz.web.mapper.UserMapper;
 import com.jaychouzzz.biz.web.service.IUserManager;
 import com.jaychouzzz.common.entity.User;
@@ -12,6 +14,9 @@ import com.jaychouzzz.common.enums.AccountStatus;
 import com.jaychouzzz.common.exception.UserInsertException;
 import com.jaychouzzz.common.vo.RegisterVo;
 import com.jaychouzzz.sequence.sequence.Sequence;
+import com.jaychouzzz.sms.component.MailManager;
+import com.qiniu.sms.SmsManager;
+import com.qiniu.sms.model.TemplateInfo;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -36,6 +41,10 @@ public class IUserManagerImpl implements IUserManager {
 
     private PasswordEncoder passwordEncoder;
 
+    private SmsManager  smsManager;
+
+    private MailManager mailManager;
+
     @Override
     public void createAccount(User user) {
         userMapper.insert(user);
@@ -53,6 +62,7 @@ public class IUserManagerImpl implements IUserManager {
         user.setPhoneNumber(registerVo.getPhone());
         user.setCompanyName(registerVo.getCompanyName());
         user.setAccountStatus(AccountStatus.ACTIVE);
+        user.setMail(registerVo.getMail());
         //pkId由发号器模块发放
         user.setCreateDate(new Date());
         user.setUpdateDate(new Date());
@@ -63,18 +73,18 @@ public class IUserManagerImpl implements IUserManager {
         user.setRecordVersion(0L);
         //2.存储用户
         try {
-            log.debug("开始新增用户");
+            log.info("开始新增用户");
             userMapper.insert(user);
-            log.debug("用户注册成功:"+ JSONUtil.toJsonStr(user));
+            log.info("用户注册成功:"+ JSONUtil.toJsonStr(user));
         } catch (Exception e) {
             throw new UserInsertException("新增用户异常:"+e.getLocalizedMessage());
         }
         //3.发送邮件至指定邮箱告知用户注册成功
-
+//        AcsResponse mailResponse = mailManager.sendSingleMail("1290274972@qq.com", "注册测试", "test-test-test");
         //4.发送短信至指定手机告知用户注册成功
 
         //5.创建成功跳转至登录页,失败则返回注册页,提示错误信息500服务器繁忙请稍后尝试
 
-        return "";
+        return "signin";
     }
 }

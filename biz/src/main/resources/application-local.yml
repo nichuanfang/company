@@ -1,0 +1,99 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: company
+  datasource:
+    url: jdbc:mysql://localhost:3306/company
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+#  模板引擎配置
+  thymeleaf:
+    cache: false
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+#  redis配置
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 5000
+
+jaychouzzz:
+  security:
+    login:
+#      配置用户名密码登录
+      login-page: /form/authentication
+      login-processing-url: /form/login
+    image:
+      expire-time: 40
+    sms:
+      code-length: 4
+      expire-time: 60
+    register:
+      register-url: /register
+      register-processing-url: /handleRegister
+#  雪花算法配置
+  xsequence:
+    snowflake:
+#      业务名称
+      biz-name: company
+#      步长
+      step: 1100
+#      起始值
+      step-start: 0
+#      数据中心id
+#      datacenter-id: ${DATACENTER-ID:08209270}
+#      机器id
+#      worker-id: ${SPRING.APPLICATION.NAME:company}
+
+#  阿里云账号配置
+  ali:
+    access-key: LTAI5PPjyHQqOOWF
+    access-secret: 43R8fW4S6jMSyv8h7Tvrj4RiCp2Z2P
+    region: cn-hangzhou
+#  阿里云邮件配置
+  mail:
+    account-name: jaychouzzz@vencenter.cn
+    address-type: 1
+    from-alias: jaychouzzz
+    reply-to-address: true
+    tag-name: jaychouzzz
+#  七牛云短信配置
+  sms:
+    access-key: VblLc7f_A0gpk6Cz0OCEmb-dvfr4D7rcqATsgH3j
+    secret-key: eCdf0tm3FE5A9EPCeKQ46KexgyQ8zZdXU5W7n-00
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-enums-package: com.jaychouzzz.common.enums
+
+# 滑动验证码配置
+captcha:
+  water:
+    #汉字统一使用Unicode,保证程序通过@value读取到是中文，可通过这个在线转换 https://tool.chinaz.com/tools/unicode.aspx 中文转Unicode
+    #右下角水印文字(我的水印)
+    mark: \u6211\u7684\u6c34\u5370
+    #右下角水印字体(宋体)
+    font: \u5b8b\u4f53
+  font:
+    #点选文字验证码的文字字体(宋体)
+    type: \u5b8b\u4f53
+  slip:
+    #校验滑动拼图允许误差偏移量(默认5像素)
+    offset: 5
+  aes:
+    #aes.key(16位，和前端加密保持一致)
+    key: XwKsGlMcdPMEhR1B
+
+

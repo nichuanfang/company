@@ -1,0 +1,697 @@
+2020-05-22 09:59:34,385 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 33048 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 09:59:34,403 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 09:59:36,568 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 09:59:36,571 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 09:59:36,602 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2020-05-22 09:59:37,400 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 09:59:37,410 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 09:59:37,411 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 09:59:37,411 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 09:59:37,414 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 09:59:37,414 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 09:59:37,414 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 09:59:37,432 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 09:59:37,504 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 09:59:37,505 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 2992 ms
+2020-05-22 09:59:38,749 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 09:59:38,943 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 09:59:39,025 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 09:59:39,317 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 09:59:39,317 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 09:59:39,317 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 09:59:39,317 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 09:59:39,343 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5563bb40, org.springframework.security.web.context.SecurityContextPersistenceFilter@106cd9c8, org.springframework.security.web.header.HeaderWriterFilter@71e2c6d8, org.springframework.security.web.authentication.logout.LogoutFilter@7afbf2a0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a6fb62f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78318ac2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37fef327, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11148dc2, org.springframework.security.web.session.SessionManagementFilter@376b5cb2, org.springframework.security.web.access.ExceptionTranslationFilter@46b6701e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@322b09da]
+2020-05-22 09:59:39,393 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 09:59:39,425 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 09:59:39,428 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 5.694 seconds (JVM running for 7.537)
+2020-05-22 12:48:42,823 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 14:15:13,331 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 22860 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 14:15:13,333 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: application-test.yml,local
+2020-05-22 14:15:13,804 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 14:15:13,806 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 14:15:13,829 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-05-22 14:15:14,315 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 14:15:14,332 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 14:15:14,333 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 14:15:14,333 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 14:15:14,335 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 14:15:14,335 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 14:15:14,335 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 14:15:14,348 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 14:15:14,408 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 14:15:14,409 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 1024 ms
+2020-05-22 14:15:15,041 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 14:15:15,130 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 14:15:15,180 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 14:15:15,371 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 14:15:15,371 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 14:15:15,371 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 14:15:15,371 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 14:15:15,392 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14b95942, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a588b5f, org.springframework.security.web.header.HeaderWriterFilter@1f172892, org.springframework.security.web.authentication.logout.LogoutFilter@4b07cad0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@507049f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bdb5e0f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ed25612, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3375b118, org.springframework.security.web.session.SessionManagementFilter@45f9d394, org.springframework.security.web.access.ExceptionTranslationFilter@719c1faf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@786a3477]
+2020-05-22 14:15:15,426 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 14:15:15,443 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 14:15:15,446 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.452 seconds (JVM running for 3.914)
+2020-05-22 14:15:55,578 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 14:15:55,578 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 14:15:55,584 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 6 ms
+2020-05-22 16:53:09,795 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 16:53:30,815 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 16108 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 16:53:30,817 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 16:53:31,462 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 16:53:31,464 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 16:53:31,487 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-05-22 16:53:32,057 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 16:53:32,063 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 16:53:32,064 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 16:53:32,064 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 16:53:32,065 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 16:53:32,065 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 16:53:32,066 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 16:53:32,068 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 16:53:32,133 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 16:53:32,133 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 1262 ms
+2020-05-22 16:53:32,602 [main] WARN  [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] AbstractApplicationContext.java:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'registerController' defined in file [F:\workspace\company\biz\target\classes\com\jaychouzzz\biz\web\controller\principal\RegisterController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'IUserManagerImpl' defined in file [F:\workspace\company\biz\target\classes\com\jaychouzzz\biz\web\service\serviceimpl\IUserManagerImpl.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'smsManager' defined in class path resource [com/jaychouzzz/sms/config/SmsBeanConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.qiniu.sms.SmsManager]: Factory method 'smsManager' threw exception; nested exception is java.lang.IllegalArgumentException: empty key
+2020-05-22 16:53:32,605 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Stopping service [Tomcat]
+2020-05-22 16:53:32,613 [main] INFO  [o.s.b.a.l.ConditionEvaluationReportLoggingListener] ConditionEvaluationReportLoggingListener.java:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-22 16:53:32,620 [main] ERROR [org.springframework.boot.SpringApplication] SpringApplication.java:826 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'registerController' defined in file [F:\workspace\company\biz\target\classes\com\jaychouzzz\biz\web\controller\principal\RegisterController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'IUserManagerImpl' defined in file [F:\workspace\company\biz\target\classes\com\jaychouzzz\biz\web\service\serviceimpl\IUserManagerImpl.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'smsManager' defined in class path resource [com/jaychouzzz/sms/config/SmsBeanConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.qiniu.sms.SmsManager]: Factory method 'smsManager' threw exception; nested exception is java.lang.IllegalArgumentException: empty key
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:228)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:895)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.jaychouzzz.biz.BizApplication.main(BizApplication.java:12)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'IUserManagerImpl' defined in file [F:\workspace\company\biz\target\classes\com\jaychouzzz\biz\web\service\serviceimpl\IUserManagerImpl.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'smsManager' defined in class path resource [com/jaychouzzz/sms/config/SmsBeanConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.qiniu.sms.SmsManager]: Factory method 'smsManager' threw exception; nested exception is java.lang.IllegalArgumentException: empty key
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:228)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1306)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'smsManager' defined in class path resource [com/jaychouzzz/sms/config/SmsBeanConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.qiniu.sms.SmsManager]: Factory method 'smsManager' threw exception; nested exception is java.lang.IllegalArgumentException: empty key
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1306)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.qiniu.sms.SmsManager]: Factory method 'smsManager' threw exception; nested exception is java.lang.IllegalArgumentException: empty key
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 47 common frames omitted
+Caused by: java.lang.IllegalArgumentException: empty key
+	at com.qiniu.util.Auth.create(Auth.java:68)
+	at com.jaychouzzz.sms.config.SmsBeanConfig.smsManager(SmsBeanConfig.java:24)
+	at com.jaychouzzz.sms.config.SmsBeanConfig$$EnhancerBySpringCGLIB$$691abbe2.CGLIB$smsManager$1(<generated>)
+	at com.jaychouzzz.sms.config.SmsBeanConfig$$EnhancerBySpringCGLIB$$691abbe2$$FastClassBySpringCGLIB$$ca456ad1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.jaychouzzz.sms.config.SmsBeanConfig$$EnhancerBySpringCGLIB$$691abbe2.smsManager(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 48 common frames omitted
+2020-05-22 16:56:37,032 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 25712 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 16:56:37,035 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 16:56:37,513 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 16:56:37,514 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 16:56:37,535 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-05-22 16:56:37,943 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 16:56:37,949 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 16:56:37,950 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 16:56:37,950 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 16:56:37,952 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 16:56:37,952 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 16:56:37,952 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 16:56:37,955 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 16:56:38,010 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 16:56:38,010 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 913 ms
+2020-05-22 16:56:38,886 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 16:56:38,971 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 16:56:39,017 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 16:56:39,244 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 16:56:39,244 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 16:56:39,244 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 16:56:39,244 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 16:56:39,264 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75d97e18, org.springframework.security.web.context.SecurityContextPersistenceFilter@60f662bd, org.springframework.security.web.header.HeaderWriterFilter@915d7c4, org.springframework.security.web.authentication.logout.LogoutFilter@79b63325, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@708769b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23bd047f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@353b0719, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5fdb7394, org.springframework.security.web.session.SessionManagementFilter@6313b441, org.springframework.security.web.access.ExceptionTranslationFilter@27dc335a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31b741e2]
+2020-05-22 16:56:39,293 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 16:56:39,309 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 16:56:39,311 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.673 seconds (JVM running for 3.215)
+2020-05-22 16:57:05,178 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 16:57:05,178 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 16:57:05,184 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 6 ms
+2020-05-22 16:57:20,195 [http-nio-9000-exec-9] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:75 - 开始新增用户
+2020-05-22 16:57:20,224 [http-nio-9000-exec-9] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2020-05-22 16:57:25,370 [http-nio-9000-exec-9] ERROR [com.zaxxer.hikari.pool.HikariPool] HikariPool.java:593 - HikariPool-1 - Exception during pool initialization.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:91)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:53)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.update(MybatisCachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor.intercept(OptimisticLockerInterceptor.java:69)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy91.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy74.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:60)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:96)
+	at com.sun.proxy.$Proxy75.insert(Unknown Source)
+	at com.jaychouzzz.biz.web.service.serviceimpl.IUserManagerImpl.register(IUserManagerImpl.java:76)
+	at com.jaychouzzz.biz.web.controller.principal.RegisterController.register(RegisterController.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+	... 134 common frames omitted
+2020-05-22 16:57:25,379 [http-nio-9000-exec-9] ERROR [o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]] DirectJDKLog.java:175 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.jaychouzzz.common.exception.UserInsertException: 新增用户异常:nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### The error may exist in com/jaychouzzz/biz/web/mapper/UserMapper.java (best guess)
+### The error may involve com.jaychouzzz.biz.web.mapper.UserMapper.insert
+### The error occurred while executing an update
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] with root cause
+com.jaychouzzz.common.exception.UserInsertException: 新增用户异常:nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### The error may exist in com/jaychouzzz/biz/web/mapper/UserMapper.java (best guess)
+### The error may involve com.jaychouzzz.biz.web.mapper.UserMapper.insert
+### The error occurred while executing an update
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.jaychouzzz.biz.web.service.serviceimpl.IUserManagerImpl.register(IUserManagerImpl.java:79)
+	at com.jaychouzzz.biz.web.controller.principal.RegisterController.register(RegisterController.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-22 16:58:51,383 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 16:58:53,433 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 18280 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 16:58:53,437 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 16:58:53,948 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 16:58:53,950 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 16:58:53,972 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-05-22 16:58:54,397 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 16:58:54,404 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 16:58:54,405 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 16:58:54,405 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 16:58:54,406 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 16:58:54,406 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 16:58:54,406 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 16:58:54,408 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 16:58:54,467 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 16:58:54,467 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 988 ms
+2020-05-22 16:58:55,302 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 16:58:55,382 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 16:58:55,428 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 16:58:55,646 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 16:58:55,646 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 16:58:55,646 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 16:58:55,646 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 16:58:55,677 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71139e77, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ebfb045, org.springframework.security.web.header.HeaderWriterFilter@47be41c6, org.springframework.security.web.authentication.logout.LogoutFilter@6d3163a6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@75d97e18, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77c692b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67a0ff25, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4de91056, org.springframework.security.web.session.SessionManagementFilter@13a268cd, org.springframework.security.web.access.ExceptionTranslationFilter@4cc7e3ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@69d2e517]
+2020-05-22 16:58:55,713 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 16:58:55,731 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 16:58:55,733 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.9 seconds (JVM running for 3.603)
+2020-05-22 16:59:06,796 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 16:59:06,796 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 16:59:06,803 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 7 ms
+2020-05-22 16:59:16,926 [http-nio-9000-exec-4] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:75 - 开始新增用户
+2020-05-22 16:59:16,953 [http-nio-9000-exec-4] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2020-05-22 16:59:17,193 [http-nio-9000-exec-4] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2020-05-22 16:59:17,294 [http-nio-9000-exec-4] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:77 - 用户注册成功:{"pkId":"316258729648443392","updateDate":1590137956926,"companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$cKmi3VzWyf72tI1HL4kpTO4vouhllb8Drwr0s8uLBqd4OemUcNrGW","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590137956926}
+2020-05-22 17:00:17,853 [HikariPool-1 housekeeper] WARN  [com.zaxxer.hikari.pool.HikariPool] HikariPool.java:787 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m559ms413µs900ns).
+2020-05-22 17:21:20,619 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:21:20,631 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-1 - Shutdown initiated...
+2020-05-22 17:21:20,641 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-1 - Shutdown completed.
+2020-05-22 17:21:25,370 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 18480 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 17:21:25,373 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 17:21:25,940 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 17:21:25,942 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 17:21:25,963 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-05-22 17:21:26,418 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 17:21:26,425 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:21:26,426 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 17:21:26,426 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 17:21:26,427 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 17:21:26,427 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 17:21:26,427 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 17:21:26,430 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 17:21:26,492 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 17:21:26,492 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 1050 ms
+2020-05-22 17:21:27,373 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 17:21:27,457 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:21:27,511 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 17:21:27,757 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 17:21:27,757 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 17:21:27,757 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 17:21:27,757 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 17:21:27,778 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4489f60f, org.springframework.security.web.context.SecurityContextPersistenceFilter@165aa43a, org.springframework.security.web.header.HeaderWriterFilter@18811c42, org.springframework.security.web.authentication.logout.LogoutFilter@6cee903a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@780ee3ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d977a20, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48af5f38, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@fe08eaf, org.springframework.security.web.session.SessionManagementFilter@32b95de, org.springframework.security.web.access.ExceptionTranslationFilter@7462ba4b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@698ac187]
+2020-05-22 17:21:27,811 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:21:27,829 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 17:21:27,832 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.871 seconds (JVM running for 3.496)
+2020-05-22 17:21:33,625 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 17:21:33,626 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 17:21:33,632 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 6 ms
+2020-05-22 17:23:47,731 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:23:51,790 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 17664 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 17:23:51,792 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 17:23:52,309 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 17:23:52,311 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 17:23:52,332 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-05-22 17:23:52,742 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 17:23:52,749 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:23:52,750 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 17:23:52,750 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 17:23:52,751 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 17:23:52,751 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 17:23:52,752 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 17:23:52,754 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 17:23:52,810 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 17:23:52,810 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 951 ms
+2020-05-22 17:23:53,665 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 17:23:53,753 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:23:53,800 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 17:23:54,037 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 17:23:54,037 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 17:23:54,037 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 17:23:54,037 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 17:23:54,057 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38cf3ae1, org.springframework.security.web.context.SecurityContextPersistenceFilter@69b37f5c, org.springframework.security.web.header.HeaderWriterFilter@350567f1, org.springframework.security.web.authentication.logout.LogoutFilter@59371066, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@48106381, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34b2d51a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f6c8d45, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@123ca460, org.springframework.security.web.session.SessionManagementFilter@26f75d9c, org.springframework.security.web.access.ExceptionTranslationFilter@627bcd7e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33f349ae]
+2020-05-22 17:23:54,087 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:23:54,103 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 17:23:54,106 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.752 seconds (JVM running for 3.318)
+2020-05-22 17:24:07,342 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 17:24:07,342 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 17:24:07,346 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 4 ms
+2020-05-22 17:24:14,262 [http-nio-9000-exec-4] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:24:14,291 [http-nio-9000-exec-4] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2020-05-22 17:24:14,488 [http-nio-9000-exec-4] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2020-05-22 17:24:14,584 [http-nio-9000-exec-4] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316265009939206144","updateDate":1590139454262,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$MEsHzjyEZ3kE5v6r/x8ci.6CohwgAAchioGRRU5Fm9lBNTtZ0CvpK","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139454262}
+2020-05-22 17:25:11,811 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:25:11,823 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-1 - Shutdown initiated...
+2020-05-22 17:25:11,833 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-1 - Shutdown completed.
+2020-05-22 17:25:14,592 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 30392 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 17:25:14,594 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 17:25:15,030 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 17:25:15,032 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 17:25:15,052 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-05-22 17:25:15,448 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 17:25:15,455 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:25:15,455 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 17:25:15,456 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 17:25:15,457 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 17:25:15,457 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 17:25:15,457 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 17:25:15,460 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 17:25:15,516 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 17:25:15,517 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 887 ms
+2020-05-22 17:25:16,331 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 17:25:16,411 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:25:16,456 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 17:25:16,686 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 17:25:16,686 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 17:25:16,687 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 17:25:16,687 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 17:25:16,707 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38cb1606, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ffcb232, org.springframework.security.web.header.HeaderWriterFilter@25d0b918, org.springframework.security.web.authentication.logout.LogoutFilter@71a2df1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@18faaff6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f53fc38, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@627acb38, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61c4cebd, org.springframework.security.web.session.SessionManagementFilter@9bf63d2, org.springframework.security.web.access.ExceptionTranslationFilter@5d9bb69b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1029cf9]
+2020-05-22 17:25:16,737 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:25:16,753 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 17:25:16,755 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.578 seconds (JVM running for 3.412)
+2020-05-22 17:25:21,929 [http-nio-9000-exec-2] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 17:25:21,930 [http-nio-9000-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 17:25:21,939 [http-nio-9000-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 8 ms
+2020-05-22 17:25:31,686 [http-nio-9000-exec-6] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:25:31,716 [http-nio-9000-exec-6] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2020-05-22 17:25:31,914 [http-nio-9000-exec-6] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2020-05-22 17:25:32,002 [http-nio-9000-exec-6] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316265334683193344","updateDate":1590139531686,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$jDtAuJ8XSGRhTYDcxghixe4cWhCrQR8HeU/EPXjQnWBTQVWgV5L/.","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139531686}
+2020-05-22 17:27:00,903 [http-nio-9000-exec-6] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:27:01,002 [http-nio-9000-exec-6] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316265708773167104","updateDate":1590139620903,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$4eARH3MTKjo9AN3M03.jc.9O1RJrMf/F/90NXCXw5TsoB2Kgr2JSu","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139620903}
+2020-05-22 17:27:03,436 [http-nio-9000-exec-7] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:27:03,504 [http-nio-9000-exec-7] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316265719397339136","updateDate":1590139623436,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$q1K1NnzU859ydzJwSWm9Ie6q7R9mcH27k.zkiMVxeAj7v1ASYYeE6","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139623436}
+2020-05-22 17:27:42,452 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:27:42,465 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-1 - Shutdown initiated...
+2020-05-22 17:27:42,474 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-1 - Shutdown completed.
+2020-05-22 17:27:46,230 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 21004 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 17:27:46,232 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 17:27:46,731 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 17:27:46,733 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 17:27:46,754 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 9ms. Found 0 Redis repository interfaces.
+2020-05-22 17:27:47,161 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 17:27:47,168 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:27:47,168 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 17:27:47,169 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 17:27:47,170 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 17:27:47,170 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 17:27:47,171 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 17:27:47,173 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 17:27:47,229 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 17:27:47,229 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 933 ms
+2020-05-22 17:27:48,081 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 17:27:48,160 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:27:48,206 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 17:27:48,437 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 17:27:48,438 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 17:27:48,438 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 17:27:48,438 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 17:27:48,457 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@146f3d22, org.springframework.security.web.context.SecurityContextPersistenceFilter@75452aea, org.springframework.security.web.header.HeaderWriterFilter@283baa39, org.springframework.security.web.authentication.logout.LogoutFilter@7858d31d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@782e6b40, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4537880f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f6e2ad9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66b6873f, org.springframework.security.web.session.SessionManagementFilter@2830315f, org.springframework.security.web.access.ExceptionTranslationFilter@1a7e799e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a03529c]
+2020-05-22 17:27:48,488 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:27:48,504 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 17:27:48,506 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.662 seconds (JVM running for 3.275)
+2020-05-22 17:28:03,377 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 17:28:03,377 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 17:28:03,382 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 4 ms
+2020-05-22 17:28:03,497 [http-nio-9000-exec-1] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:28:03,523 [http-nio-9000-exec-1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2020-05-22 17:28:03,720 [http-nio-9000-exec-1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2020-05-22 17:28:03,808 [http-nio-9000-exec-1] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316265971407900672","updateDate":1590139683496,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$uIfR7d8jTdpSJOd0NPUTsObB7Qz/rzmbILfBx4AGZkAh8jdV/c6IC","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139683496}
+2020-05-22 17:29:49,519 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:29:49,531 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-1 - Shutdown initiated...
+2020-05-22 17:29:49,540 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-1 - Shutdown completed.
+2020-05-22 17:29:52,282 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 24956 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 17:29:52,285 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 17:29:52,742 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 17:29:52,744 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 17:29:52,765 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces.
+2020-05-22 17:29:53,175 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 17:29:53,181 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:29:53,182 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 17:29:53,182 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 17:29:53,183 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 17:29:53,184 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 17:29:53,184 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 17:29:53,186 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 17:29:53,242 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 17:29:53,242 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 923 ms
+2020-05-22 17:29:54,080 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 17:29:54,160 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:29:54,206 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 17:29:54,420 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 17:29:54,420 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 17:29:54,420 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 17:29:54,420 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 17:29:54,440 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f471037, org.springframework.security.web.context.SecurityContextPersistenceFilter@38a38ed4, org.springframework.security.web.header.HeaderWriterFilter@6f8ac8d5, org.springframework.security.web.authentication.logout.LogoutFilter@2aac8ad7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6a4a2090, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b4b8199, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25fa6889, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d1cfe4, org.springframework.security.web.session.SessionManagementFilter@6ac756b, org.springframework.security.web.access.ExceptionTranslationFilter@e97f115, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58b8f9e3]
+2020-05-22 17:29:54,474 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:29:54,492 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 17:29:54,495 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.641 seconds (JVM running for 3.539)
+2020-05-22 17:29:59,761 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 17:29:59,761 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 17:29:59,769 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 8 ms
+2020-05-22 17:29:59,891 [http-nio-9000-exec-1] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:29:59,919 [http-nio-9000-exec-1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2020-05-22 17:30:00,128 [http-nio-9000-exec-1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2020-05-22 17:30:00,227 [http-nio-9000-exec-1] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316266459608109056","updateDate":1590139799891,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$MQpgvz7leaQCbgXTjyKDje3pcMqQQRBdR3EvmMhrDnh8ef4acvaQ.","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139799891}
+2020-05-22 17:30:54,883 [SpringContextShutdownHook] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:30:54,895 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:350 - HikariPool-1 - Shutdown initiated...
+2020-05-22 17:30:54,906 [SpringContextShutdownHook] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:352 - HikariPool-1 - Shutdown completed.
+2020-05-22 17:30:57,732 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:55 - Starting BizApplication on DESKTOP-O3G0KKQ with PID 22004 (F:\workspace\company\biz\target\classes started by chuanfang in F:\workspace\company)
+2020-05-22 17:30:57,735 [main] INFO  [com.jaychouzzz.biz.BizApplication] SpringApplication.java:655 - The following profiles are active: local
+2020-05-22 17:30:58,242 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:249 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-22 17:30:58,244 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:127 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-05-22 17:30:58,269 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:187 - Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2020-05-22 17:30:58,670 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:91 - Tomcat initialized with port(s): 9000 (http)
+2020-05-22 17:30:58,677 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:30:58,677 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2020-05-22 17:30:58,677 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-05-22 17:30:58,678 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 17:30:58,679 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 17:30:58,679 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 17:30:58,681 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 17:30:58,739 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2020-05-22 17:30:58,740 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:284 - Root WebApplicationContext: initialization completed in 941 ms
+2020-05-22 17:30:59,585 [main] INFO  [c.a.captcha.service.impl.DefaultCaptchaServiceImpl] DefaultCaptchaServiceImpl.java:68 - --->>>初始化验证码底图<<<---
+2020-05-22 17:30:59,667 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskExecutor] ExecutorConfigurationSupport.java:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 17:30:59,714 [main] INFO  [o.s.b.a.web.servlet.WelcomePageHandlerMapping] WelcomePageHandlerMapping.java:58 - Adding welcome page template: index
+2020-05-22 17:30:59,952 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/css/**'], []
+2020-05-22 17:30:59,952 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/js/**'], []
+2020-05-22 17:30:59,952 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/images/**'], []
+2020-05-22 17:30:59,952 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: Ant [pattern='/static/fonts/**'], []
+2020-05-22 17:30:59,972 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70485aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@59127611, org.springframework.security.web.header.HeaderWriterFilter@11bdab37, org.springframework.security.web.authentication.logout.LogoutFilter@27db45f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6ec3d8e4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7417ef4f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71e7830a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bf8b77, org.springframework.security.web.session.SessionManagementFilter@5a6f6cac, org.springframework.security.web.access.ExceptionTranslationFilter@1a7d0c9f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c2a903f]
+2020-05-22 17:31:00,005 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9000"]
+2020-05-22 17:31:00,024 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:203 - Tomcat started on port(s): 9000 (http) with context path ''
+2020-05-22 17:31:00,026 [main] INFO  [com.jaychouzzz.biz.BizApplication] StartupInfoLogger.java:61 - Started BizApplication in 2.736 seconds (JVM running for 3.415)
+2020-05-22 17:31:04,076 [http-nio-9000-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 17:31:04,077 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2020-05-22 17:31:04,082 [http-nio-9000-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 5 ms
+2020-05-22 17:31:14,519 [http-nio-9000-exec-1] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:31:14,547 [http-nio-9000-exec-1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2020-05-22 17:31:14,747 [http-nio-9000-exec-1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2020-05-22 17:31:14,898 [http-nio-9000-exec-1] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316266772616433664","updateDate":1590139874519,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$39v0ZEpAqcKsM7gk2tfhWejmaxJYlUxUHiCtN87if7ir4CvdQgwXG","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139874519}
+2020-05-22 17:31:17,294 [http-nio-9000-exec-2] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:31:17,343 [http-nio-9000-exec-2] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316266784159158272","updateDate":1590139877294,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$iIVrFeDHkNaESc8rQ5tlVuEH95TZR71pme/otGbWT9SxddSBE89re","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139877294}
+2020-05-22 17:31:17,460 [http-nio-9000-exec-3] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:76 - 开始新增用户
+2020-05-22 17:31:17,515 [http-nio-9000-exec-3] INFO  [c.j.biz.web.service.serviceimpl.IUserManagerImpl] IUserManagerImpl.java:78 - 用户注册成功:{"pkId":"316266784851218432","updateDate":1590139877460,"mail":"","companyName":"","accountStatus":"ACTIVE","deleteFlag":0,"password":"$2a$10$aAsJWDS3AGmNgvzQVzhde.hUD3O/SWBSHtpu91YkqfiaCfyDHWhZ.","phoneNumber":"","recordVersion":0,"username":"f18326186224@gmail.com","createDate":1590139877460}

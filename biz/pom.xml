@@ -10,7 +10,7 @@
     </parent>
     <artifactId>biz</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>biz</name>
+    <name>${project.artifactId}</name>
     <description>暴露服务模块</description>
 
     <properties>
@@ -59,6 +59,10 @@
             <artifactId>sequence</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.jaychouzzz</groupId>
+            <artifactId>sms</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
