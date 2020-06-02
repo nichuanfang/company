@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 /**
@@ -32,7 +33,8 @@ public class RegisterController {
     private IUserManager userManager;
 
     @RequestMapping(value = "/handleRegister",method = RequestMethod.POST)
-    public String register(RegisterVo registerVo, @RequestHeader("Authentication")String token) {
-        return userManager.register(registerVo,token);
+    @ResponseBody
+    public String register(RegisterVo registerVo, @RequestHeader("Authentication")String token, HttpServletResponse response) {
+        return userManager.register(registerVo,token,response);
     }
 }

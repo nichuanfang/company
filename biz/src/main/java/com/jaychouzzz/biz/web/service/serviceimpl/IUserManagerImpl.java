@@ -3,6 +3,7 @@ package com.jaychouzzz.biz.web.service.serviceimpl;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.http.HttpStatus;
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import com.aliyuncs.AcsResponse;
@@ -11,10 +12,12 @@ import com.jaychouzzz.biz.web.mapper.UserMapper;
 import com.jaychouzzz.biz.web.service.IUserManager;
 import com.jaychouzzz.common.entity.User;
 import com.jaychouzzz.common.enums.AccountStatus;
+import com.jaychouzzz.common.exception.UserExistsException;
 import com.jaychouzzz.common.exception.UserInsertException;
 import com.jaychouzzz.common.vo.RegisterVo;
 import com.jaychouzzz.sequence.sequence.Sequence;
 import com.jaychouzzz.sms.component.MailManager;
+import com.qiniu.common.QiniuException;
 import com.qiniu.sms.SmsManager;
 import com.qiniu.sms.model.TemplateInfo;
 import lombok.AllArgsConstructor;
@@ -22,8 +25,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import sun.security.provider.certpath.OCSPResponse;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * @Classname IUserManagerImpl
@@ -41,7 +47,7 @@ public class IUserManagerImpl implements IUserManager {
 
     private PasswordEncoder passwordEncoder;
 
-    private SmsManager  smsManager;
+    private SmsManager smsManager;
 
     private MailManager mailManager;
 
@@ -51,11 +57,11 @@ public class IUserManagerImpl implements IUserManager {
     }
 
     @Override
-    public String register(RegisterVo registerVo, String token) {
+    public String register(RegisterVo registerVo, String token, HttpServletResponse response) {
         //1.创建用户实体  (创建时间 更新时间 删除标记 用户状态 版本号)
-        token = Base64.decodeStr(ReUtil.delPre("Basic ",token));
-        String username = StrUtil.split(token,":")[0];
-        String password = StrUtil.split(token,":")[1];
+        token = Base64.decodeStr(ReUtil.delPre("Basic ", token));
+        String username = StrUtil.split(token, ":")[0];
+        String password = StrUtil.split(token, ":")[1];
         User user = new User();
         user.setUsername(username);
         user.setPassword(passwordEncoder.encode(password));
@@ -73,18 +79,31 @@ public class IUserManagerImpl implements IUserManager {
         user.setRecordVersion(0L);
         //2.存储用户
         try {
-            log.info("开始新增用户");
-            userMapper.insert(user);
-            log.info("用户注册成功:"+ JSONUtil.toJsonStr(user));
+            //3.判断用户名是否存在
+            if (userMapper.selectByUserName(username) == null) {
+                log.info("开始新增用户");
+                userMapper.insert(user);
+                log.info("用户注册成功:" + JSONUtil.toJsonStr(user));
+            }else{
+                response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
+                throw new UserExistsException();
+            }
         } catch (Exception e) {
-            throw new UserInsertException("新增用户异常:"+e.getLocalizedMessage());
+            response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
+            throw new UserInsertException("新增用户异常:" + e.getLocalizedMessage());
         }
-        //3.发送邮件至指定邮箱告知用户注册成功
-//        AcsResponse mailResponse = mailManager.sendSingleMail("1290274972@qq.com", "注册测试", "test-test-test");
         //4.发送短信至指定手机告知用户注册成功
-
         //5.创建成功跳转至登录页,失败则返回注册页,提示错误信息500服务器繁忙请稍后尝试
-
+        HashMap<String, String> map = new HashMap<>();
+        map.put("code", username);
+        try {
+            if (!StrUtil.isNullOrUndefined(registerVo.getPhone())) {
+                smsManager.sendMessage("1265168338410024960", new String[]{registerVo.getPhone()}, map);
+            }
+        } catch (QiniuException e) {
+            response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
+            e.printStackTrace();
+        }
         return "signin";
     }
 }

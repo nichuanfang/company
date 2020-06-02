@@ -19,5 +19,9 @@ public class LoginProperties {
      * 告知UsernamePasswordAuthenticationFilter处理这个url
      */
     private String loginProcessingUrl = "/form/login";
+    /**
+     * 登录失败页面
+     */
+    private String loginErrorUrl = "/loginError";
 
 }

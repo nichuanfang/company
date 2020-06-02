@@ -34,6 +34,7 @@ jaychouzzz:
 #      配置用户名密码登录
       login-page: /form/authentication
       login-processing-url: /form/login
+      login-error-url: /loginError
     image:
       expire-time: 40
     sms:

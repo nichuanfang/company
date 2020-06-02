@@ -310,7 +310,7 @@
 						setTimeout(()=>{
 							this.htmlDoms.tips.css({"display":"none",animation:"none"});
 						},1300)
-						this.options.error(this);
+						this.options.loginError(this);
 					}
 				})
 	            this.status = false;
@@ -484,7 +484,7 @@
 								},1000)
 								_this.options.success({captchaVerification});
 							}else{
-								_this.options.error(_this);
+								_this.options.loginError(_this);
 								_this.$element.find('.verify-bar-area').css({'color': '#d9534f', 'border-color': '#d9534f'});
 								_this.$element.find('.verify-msg').text('验证失败');
 								setTimeout(function () { 

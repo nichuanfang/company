@@ -21,12 +21,9 @@ import java.io.IOException;
 @Slf4j
 public class MyLoginSuccessfulHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
-    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         log.debug("登录成功");
-        redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/index");
-//        super.onAuthenticationSuccess();
+        super.onAuthenticationSuccess(httpServletRequest,httpServletResponse,authentication);
     }
 }

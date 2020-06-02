@@ -29,6 +29,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User(username,"$2a$10$.VlLv0T/0Lb4IKFbnYBahemH.iXt2l/gH7ZDbeB9eGxM6JJFzynjK", AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+        com.jaychouzzz.common.entity.User user = userMapper.selectByUserName(username);
+        return new User(username,user.getPassword(), AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
     }
 }

@@ -43,7 +43,8 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(securityProperties.getLogin().getLoginPage()
                         ,securityProperties.getRegister().getRegisterUrl()
-                        ,securityProperties.getRegister().getRegisterProcessingUrl(),"/captcha/get","/captcha/check")
+                        ,securityProperties.getRegister().getRegisterProcessingUrl()
+                        ,securityProperties.getLogin().getLoginErrorUrl())
                 .permitAll()
                 //剩下的请求需要认证
                 .anyRequest()
@@ -57,7 +58,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * 不拦截静态资源
      *
-     * @param web
+     * @param web web对象
      */
     @Override
     public void configure(WebSecurity web) {
