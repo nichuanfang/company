@@ -35,4 +35,7 @@ public class SecurityProperties {
     @NestedConfigurationProperty
     private ImageValidateCodeProperties image;
 
+    @NestedConfigurationProperty
+    private RememberMeProperties rememberMe;
+
 }

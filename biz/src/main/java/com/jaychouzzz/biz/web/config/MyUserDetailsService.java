@@ -25,8 +25,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
     private UserMapper userMapper;
 
-    private MySecurityConfig mySecurityConfig;
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         com.jaychouzzz.common.entity.User user = userMapper.selectByUserName(username);

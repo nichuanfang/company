@@ -4,11 +4,20 @@ import com.jaychouzzz.security.handler.MyLoginFailureHandler;
 import com.jaychouzzz.security.handler.MyLoginSuccessfulHandler;
 import com.jaychouzzz.security.properties.SecurityProperties;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.RememberMeServices;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+
+import javax.sql.DataSource;
 
 /**
  * @Classname MySecurityConfig
@@ -28,8 +37,13 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     private MyLoginFailureHandler myLoginFailureHandler;
 
+    private PersistentTokenRepository tokenRepository;
+
+    private UserDetailsService userDetailsService;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
+
         http
                 //表单登录配置  包括用户名密码登录  或者自定义表单登录(短信验证码)
                 .formLogin()
@@ -39,12 +53,27 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(myLoginSuccessfulHandler)
                 .failureHandler(myLoginFailureHandler)
                 .and()
+                .rememberMe()
+                .tokenRepository(tokenRepository)
+                .userDetailsService(userDetailsService)
+                .authenticationSuccessHandler(myLoginSuccessfulHandler)
+                //token有效时间
+                .tokenValiditySeconds(securityProperties.getRememberMe().getTokenValiditySeconds())
+                //是否总是记住 即使前端没有remember-me参数
+                .alwaysRemember(securityProperties.getRememberMe().isAlwaysRemember())
+                //cookie作用的域名
+                .rememberMeCookieDomain(securityProperties.getRememberMe().getRememberMeCookieDomain())
+                //cookie名称
+                .rememberMeCookieName(securityProperties.getRememberMe().getRememberMeCookieName())
+                //如果置为true则只支持https
+                .useSecureCookie(securityProperties.getRememberMe().isUseSecureCookie())
+                .and()
                 //授权配置
                 .authorizeRequests()
                 .antMatchers(securityProperties.getLogin().getLoginPage()
-                        ,securityProperties.getRegister().getRegisterUrl()
-                        ,securityProperties.getRegister().getRegisterProcessingUrl()
-                        ,securityProperties.getLogin().getLoginErrorUrl())
+                        , securityProperties.getRegister().getRegisterUrl()
+                        , securityProperties.getRegister().getRegisterProcessingUrl()
+                        , securityProperties.getLogin().getLoginErrorUrl())
                 .permitAll()
                 //剩下的请求需要认证
                 .anyRequest()
@@ -62,7 +91,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/static/css/**","/static/js/**","/static/images/**","/static/fonts/**");
+        web.ignoring().antMatchers("/static/css/**", "/static/js/**", "/static/images/**", "/static/fonts/**");
     }
 
 }
