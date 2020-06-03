@@ -1,23 +1,12 @@
 package com.jaychouzzz.biz.web.controller.principal;
 
-import cn.hutool.core.codec.Base64;
-import cn.hutool.core.util.ReUtil;
-import cn.hutool.core.util.StrUtil;
-import com.jaychouzzz.biz.web.mapper.UserMapper;
 import com.jaychouzzz.biz.web.service.IUserManager;
-import com.jaychouzzz.common.entity.User;
-import com.jaychouzzz.common.enums.AccountStatus;
 import com.jaychouzzz.common.vo.RegisterVo;
-import com.jaychouzzz.sequence.builder.SnowflakeSeqBuilder;
-import com.jaychouzzz.sequence.properties.SequenceSnowflakeProperties;
-import com.jaychouzzz.sequence.sequence.Sequence;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 
 /**
  * @Classname RegisterController

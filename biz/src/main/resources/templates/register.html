@@ -386,6 +386,11 @@
             success: function (response) {
                 window.prompt("注册成功","请登录");
                 window.location = "/"+response;
+            },
+            error: function (error) {
+                debugger;
+                console.log(error);
+                window.location = "/errorPage?msg="+error.responseJSON.message;
             }
         })
     }

@@ -1,6 +1,10 @@
 package com.jaychouzzz.security.properties;
 
+import cn.hutool.http.HttpUtil;
 import lombok.Data;
+import org.springframework.web.util.WebUtils;
+
+import java.net.Inet4Address;
 
 /**
  * @Classname RememberMeProperties
@@ -22,13 +26,13 @@ public class RememberMeProperties {
     /**
      * cookie's domain
      */
-    private String rememberMeCookieDomain;
+    private String rememberMeCookieDomain = "localhost";
     /**
      * cookie's name
      */
-    private String rememberMeCookieName;
+    private String rememberMeCookieName = "remember-me";
     /**
      * use HTTPS or not
      */
-    private boolean useSecureCookie;
+    private boolean useSecureCookie = false;
 }

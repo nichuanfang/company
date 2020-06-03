@@ -10,7 +10,7 @@ import lombok.Data;
  * @Version 1.0
  */
 @Data
-public class LoginProperties {
+public class LoginProperties extends ErrorPageProperties{
     /**
      * 登录页面
      */
@@ -19,9 +19,5 @@ public class LoginProperties {
      * 告知UsernamePasswordAuthenticationFilter处理这个url
      */
     private String loginProcessingUrl = "/form/login";
-    /**
-     * 登录失败页面
-     */
-    private String loginErrorUrl = "/loginError";
 
 }

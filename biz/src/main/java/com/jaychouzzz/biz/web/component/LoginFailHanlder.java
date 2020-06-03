@@ -31,9 +31,9 @@ public class LoginFailHanlder extends MyLoginFailureHandler {
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException {
         log.error("登录错误:"+e.getLocalizedMessage());
         if(e.getCause() instanceof NullPointerException) {
-            redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/loginError?msg=Error: User is not exists!");
+            redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/errorPage?msg=Error: User is not exists!");
         }else{
-            redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/loginError?msg=Error: "+e.getMessage());
+            redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/errorPage?msg=Error: "+e.getMessage());
         }
     }
 

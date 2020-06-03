@@ -5,6 +5,7 @@ import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpStatus;
 import cn.hutool.json.JSONUtil;
+import com.jaychouzzz.biz.web.event.RegisterSuccessEvent;
 import com.jaychouzzz.biz.web.mapper.UserMapper;
 import com.jaychouzzz.biz.web.service.IUserManager;
 import com.jaychouzzz.common.entity.User;
@@ -17,8 +18,11 @@ import com.qiniu.common.QiniuException;
 import com.qiniu.sms.SmsManager;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
@@ -44,12 +48,15 @@ public class IUserManagerImpl implements IUserManager {
 
     private MailManager mailManager;
 
+    private ApplicationEventPublisher eventPublisher;
+
     @Override
     public void createAccount(User user) {
         userMapper.insert(user);
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public String register(RegisterVo registerVo, String token, HttpServletResponse response) {
         //1.创建用户实体  (创建时间 更新时间 删除标记 用户状态 版本号)
         token = Base64.decodeStr(ReUtil.delPre("Basic ", token));
@@ -76,18 +83,18 @@ public class IUserManagerImpl implements IUserManager {
             if (userMapper.selectByUserName(username) == null) {
                 log.info("开始新增用户");
                 userMapper.insert(user);
-                log.info("用户注册成功:" + JSONUtil.toJsonStr(user));
+                log.info("用户注册成功: " + JSONUtil.toJsonStr(user));
             }else{
                 response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
                 throw new UserExistsException();
             }
         } catch (Exception e) {
             response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
-            throw new UserInsertException("新增用户异常:" + e.getLocalizedMessage());
+            throw new UserInsertException("Insert failed: "+e.getMessage());
         }
         //4.发送短信至指定手机告知用户注册成功
         //5.创建成功跳转至登录页,失败则返回注册页,提示错误信息500服务器繁忙请稍后尝试
-        HashMap<String, String> map = new HashMap<>();
+        /*HashMap<String, String> map = new HashMap<>();
         map.put("code", username);
         try {
             if (!StrUtil.isNullOrUndefined(registerVo.getPhone())) {
@@ -96,6 +103,9 @@ public class IUserManagerImpl implements IUserManager {
         } catch (QiniuException e) {
             response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
             e.printStackTrace();
+        }*/
+        if (!StrUtil.isNullOrUndefined(registerVo.getPhone())) {
+            eventPublisher.publishEvent(new RegisterSuccessEvent(registerVo.getPhone()));
         }
         return "signin";
     }

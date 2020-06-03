@@ -32,9 +32,9 @@ public class AuthenticationController {
         return "register";
     }
 
-    @RequestMapping(value = "/loginError")
-    public String loginFailPage(String msg, ModelMap map) {
+    @RequestMapping(value = "/errorPage")
+    public String errorPage(String msg, ModelMap map) {
         map.put("msg",msg);
-        return "loginError";
+        return "error_page";
     }
 }

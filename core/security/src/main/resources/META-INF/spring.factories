@@ -4,5 +4,4 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.jaychouzzz.security.component.AuthenticationController,\
   com.jaychouzzz.security.config.RedisConfig,\
   com.jaychouzzz.security.component.RedisService,\
-  com.jaychouzzz.security.component.MyCaptchaCacheService,\
-  com.jaychouzzz.security.config.RememberMeConfigurerAdapter
+  com.jaychouzzz.security.component.MyCaptchaCacheService

@@ -14,6 +14,6 @@ public class UserExistsException extends RuntimeException{
     }
 
     public UserExistsException() {
-        super("用户名已存在!");
+        super("Username is already exist!,please retry");
     }
 }

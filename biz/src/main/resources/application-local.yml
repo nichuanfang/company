@@ -34,7 +34,7 @@ jaychouzzz:
 #      配置用户名密码登录
       login-page: /form/authentication
       login-processing-url: /form/login
-      login-error-url: /loginError
+      error-page: /errorPage
     image:
       expire-time: 40
     sms:
@@ -43,7 +43,8 @@ jaychouzzz:
     register:
       register-url: /register
       register-processing-url: /handleRegister
-#  雪花算法配置
+      error-page: /errorPage
+  #  雪花算法配置
   xsequence:
     snowflake:
 #      业务名称

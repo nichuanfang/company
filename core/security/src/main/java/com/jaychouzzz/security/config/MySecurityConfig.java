@@ -60,20 +60,20 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 //token有效时间
                 .tokenValiditySeconds(securityProperties.getRememberMe().getTokenValiditySeconds())
                 //是否总是记住 即使前端没有remember-me参数
-                .alwaysRemember(securityProperties.getRememberMe().isAlwaysRemember())
+                /*.alwaysRemember(securityProperties.getRememberMe().isAlwaysRemember())
                 //cookie作用的域名
                 .rememberMeCookieDomain(securityProperties.getRememberMe().getRememberMeCookieDomain())
                 //cookie名称
                 .rememberMeCookieName(securityProperties.getRememberMe().getRememberMeCookieName())
                 //如果置为true则只支持https
-                .useSecureCookie(securityProperties.getRememberMe().isUseSecureCookie())
+                .useSecureCookie(securityProperties.getRememberMe().isUseSecureCookie())*/
                 .and()
                 //授权配置
                 .authorizeRequests()
                 .antMatchers(securityProperties.getLogin().getLoginPage()
                         , securityProperties.getRegister().getRegisterUrl()
                         , securityProperties.getRegister().getRegisterProcessingUrl()
-                        , securityProperties.getLogin().getLoginErrorUrl())
+                        , securityProperties.getLogin().getErrorPage())
                 .permitAll()
                 //剩下的请求需要认证
                 .anyRequest()
