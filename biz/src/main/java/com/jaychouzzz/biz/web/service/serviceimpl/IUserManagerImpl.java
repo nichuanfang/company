@@ -4,6 +4,7 @@ import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.ReUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpStatus;
+import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import com.jaychouzzz.biz.web.event.RegisterSuccessEvent;
 import com.jaychouzzz.biz.web.mapper.UserMapper;
@@ -94,18 +95,9 @@ public class IUserManagerImpl implements IUserManager {
         }
         //4.发送短信至指定手机告知用户注册成功
         //5.创建成功跳转至登录页,失败则返回注册页,提示错误信息500服务器繁忙请稍后尝试
-        /*HashMap<String, String> map = new HashMap<>();
-        map.put("code", username);
-        try {
-            if (!StrUtil.isNullOrUndefined(registerVo.getPhone())) {
-                smsManager.sendMessage("1265168338410024960", new String[]{registerVo.getPhone()}, map);
-            }
-        } catch (QiniuException e) {
-            response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
-            e.printStackTrace();
-        }*/
+        /**/
         if (!StrUtil.isNullOrUndefined(registerVo.getPhone())) {
-            eventPublisher.publishEvent(new RegisterSuccessEvent(registerVo.getPhone()));
+            eventPublisher.publishEvent(new RegisterSuccessEvent(JSONUtil.toJsonStr(user)));
         }
         return "signin";
     }
