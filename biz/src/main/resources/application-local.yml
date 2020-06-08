@@ -29,6 +29,11 @@ spring:
     timeout: 5000
 
 jaychouzzz:
+#  事务配置
+  transaction:
+#    redis锁配置
+    lock-prefix: lock_
+    expire-time: 60
   security:
     login:
 #      配置用户名密码登录

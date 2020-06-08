@@ -501,9 +501,12 @@
         success : function(params) { //成功的回调
             // params为返回的二次验证参数 需要在接下来的实现逻辑回传服务器
             //向后台发送处理数据
+            var phone = $("#phone").val();
             $.ajax({
                 url: '/getValidateCode',
-                data: JSON.stringify($.trim($("#phone").val())),
+                data: {
+                    'phone': phone
+                },
                 method: 'POST',
                 success: function (data) {
                 }

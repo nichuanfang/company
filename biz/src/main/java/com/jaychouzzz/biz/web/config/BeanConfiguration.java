@@ -3,6 +3,7 @@ package com.jaychouzzz.biz.web.config;
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -36,6 +37,7 @@ public class BeanConfiguration {
      * @return  executor
      */
     @Bean
+    @Primary
     public ThreadPoolTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         //获取到服务器的cpu核心数

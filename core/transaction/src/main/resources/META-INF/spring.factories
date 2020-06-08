@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.jaychouzzz.config.RedisLockConfiguration\
+  ,com.jaychouzzz.utils.LockUtils
