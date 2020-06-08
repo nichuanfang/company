@@ -145,9 +145,9 @@
         <div class="container">
             <div class="row banner-w3layouts-grids">
                 <div class="col-lg-5 sign-info" data-aos="fade-right">
-                    <div style="text-align: right"><a href="javascript:void(0)" onclick="switchLogin()"><u
+                    <div style="text-align: right"><a href="javascript:void(0)" onclick="switchLogin()"><span
                             id="loginDesc"
-                            style="color: #ffffff">Switch to mobile login</u></a></div>
+                            style="text-decoration: underline">Switch to mobile login</span></a></div>
                     <h3 style="margin-top: 20px;margin-bottom: 20px">Sign in to your Account</h3>
                     <p class="para-sign mt-2 mb-4 text-center">Enter your details to create account.</p>
 
@@ -186,7 +186,7 @@
 
                             <label>Phone Number*</label>
                             <div class="icon1">
-                                <input autocomplete="off" placeholder="" name="username" type="text" required="">
+                                <input autocomplete="off" placeholder="" name="phone" id="phone" type="text" required="">
                             </div>
                         </div>
 
@@ -195,7 +195,8 @@
                             <div class="smsCode">
                                 <input id="smsCode" autocomplete="off" maxlength="6" minlength="6" placeholder=""
                                        name="smsCode" type="text" required="">
-                                <input id="btnSendCode" type="button" class="btn btn-default" value="Send">
+                                <input id="btnSendCode" type="button" class="btn btn-default" value="Send" onclick="checkPhone()">
+                                <button type="button" id="codeContainer" hidden="hidden"></button>
                             </div>
                         </div>
 
@@ -398,10 +399,10 @@
     </div>
 </div>
 <!--//Register-->
-<script src="../static/js/jquery.min.js"></script>
-<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/jquery.min.js" type="application/javascript"></script>
+<script src="../static/js/bootstrap.min.js" type="application/javascript"></script>
 <!--/aos -->
-<script src="../static/js/aos.js"></script>
+<script src="../static/js/aos.js" type="application/javascript"></script>
 <script>
     AOS.init({
         easing: 'ease-out-back',
@@ -411,11 +412,11 @@
 </script>
 <!--//aos -->
 <!--/ start-smoth-scrolling -->
-<script src="../static/js/move-top.js"></script>
-<script src="../static/js/easing.js"></script>
-<script src="../static/js/crypto-js.js"></script>
-<script src="../static/js/ase.js"></script>
-<script type="text/javascript" src="../static/js/verify.js" ></script>
+<script src="../static/js/move-top.js" type="application/javascript"></script>
+<script src="../static/js/easing.js" type="application/javascript"></script>
+<script src="../static/js/crypto-js.js" type="application/javascript"></script>
+<script src="../static/js/ase.js" type="application/javascript"></script>
+<script src="../static/js/verify.js" type="application/javascript"></script>
 <script>
     jQuery(document).ready(function ($) {
         if (!window.Promise) {
@@ -451,14 +452,14 @@
     //切换手机登录 modal展示
     function switchLogin() {
         if (flag === 'form') {
-            $('#loginDesc').html("Switch to form login");
+            $('#loginDesc').html("Switch form login");
             $("#formLogin").hide();
             $("#mobileLogin").show();
             $("#rmfp").hide();
             $("#createAccount").hide();
             flag = 'mobile';
         } else {
-            $('#loginDesc').html("Switch to mobile login");
+            $('#loginDesc').html("Switch mobile login");
             $("#formLogin").show();
             $("#mobileLogin").hide();
             $("#rmfp").show();
@@ -468,17 +469,20 @@
     }
 
     function getSmsCode() {
-        //1.图形滑动验证码校验 防止流量攻击
-        //2.手机号校验 正则匹配  注意国内国外
-        //3.校验成功开启定时 60s后才可以重新获取 同时应该是递减显示
     }
 </script>
 
 <script>
+    var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;//手机号正则
+    var count = 60; //间隔函数，1秒执行
+    var InterValObj1; //timer变量，控制时间
+    var curCount1;//当前剩余秒数
+
+    //1.图形滑动验证码校验 防止流量攻击
     $('#mpanel').slideVerify({
-        baseUrl:'/captcha',  //服务器请求地址, 默认地址为安吉服务器;
+        baseUrl:'http://localhost:9000',  //服务器请求地址, 默认地址为安吉服务器;
         mode:'pop',     //展示模式
-        containerId:'btnSendCode',//pop模式 必填 被点击之后出现行为验证码的元素id
+        containerId:'codeContainer',//pop模式 必填 被点击之后出现行为验证码的元素id
         imgSize : {       //图片的大小对象,有默认值{ width: '310px',height: '155px'},可省略
             width: '400px',
             height: '200px',
@@ -490,15 +494,55 @@
         beforeCheck:function(){  //检验参数合法性的函数  mode ="pop"有效
             let flag = true;
             //实现: 参数合法性的判断逻辑, 返回一个boolean值
-            return flag
+            return flag;
         },
-        ready : function() {},  //加载完毕的回调
+        ready : function() {
+        },  //加载完毕的回调
         success : function(params) { //成功的回调
             // params为返回的二次验证参数 需要在接下来的实现逻辑回传服务器
+            //向后台发送处理数据
+            $.ajax({
+                url: '/getValidateCode',
+                data: JSON.stringify($.trim($("#phone").val())),
+                method: 'POST',
+                success: function (data) {
+                }
+            }) ;
 
+            //3.校验成功开启定时 60s后才可以重新获取 同时应该是递减显示
+
+            curCount1 = count;
+            $("#btnSendCode").attr("disabled","true");
+            $("#btnSendCode").val( + curCount1 + "秒再获取");
+            InterValObj1 = window.setInterval(SetRemainTime1, 1000); //启动计时器，1秒执行一次
         },
         error : function() {}        //失败的回调
     });
+
+    function SetRemainTime1() {
+        if (curCount1 == 0) {
+            window.clearInterval(InterValObj1);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("重新发送");
+        }
+        else {
+            curCount1--;
+            $("#btnSendCode").val( + curCount1 + "秒再获取");
+        }
+    }
+
+    //校验手机号
+    function checkPhone() {
+        var phone = $.trim($("#phone").val());
+        if(phoneReg.test(phone)) {
+            $("#codeContainer").click();
+        }else{
+            alert("请输入正确的手机号!");
+            return false;
+        }
+        
+    }
+    
 </script>
 
 </body>

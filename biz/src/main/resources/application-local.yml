@@ -97,5 +97,3 @@ captcha:
   aes:
     #aes.key(16位，和前端加密保持一致)
     key: XwKsGlMcdPMEhR1B
-
-

@@ -19,5 +19,9 @@ public class ValidateCodeProperties {
      * 过期时间(单位:秒)
      */
     private Integer expireTime = 60;
+    /**
+     * 获取短信验证码接口
+     */
+    private String validateCodePath = "/getValidateCode";
 
 }

@@ -45,10 +45,6 @@ public class IUserManagerImpl implements IUserManager {
 
     private PasswordEncoder passwordEncoder;
 
-    private SmsManager smsManager;
-
-    private MailManager mailManager;
-
     private ApplicationEventPublisher eventPublisher;
 
     @Override
