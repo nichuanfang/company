@@ -478,49 +478,6 @@
     var InterValObj1; //timer变量，控制时间
     var curCount1;//当前剩余秒数
 
-    //1.图形滑动验证码校验 防止流量攻击
-    $('#mpanel').slideVerify({
-        baseUrl:'http://localhost:9000',  //服务器请求地址, 默认地址为安吉服务器;
-        mode:'pop',     //展示模式
-        containerId:'codeContainer',//pop模式 必填 被点击之后出现行为验证码的元素id
-        imgSize : {       //图片的大小对象,有默认值{ width: '310px',height: '155px'},可省略
-            width: '400px',
-            height: '200px',
-        },
-        barSize:{          //下方滑块的大小对象,有默认值{ width: '310px',height: '50px'},可省略
-            width: '400px',
-            height: '40px',
-        },
-        beforeCheck:function(){  //检验参数合法性的函数  mode ="pop"有效
-            let flag = true;
-            //实现: 参数合法性的判断逻辑, 返回一个boolean值
-            return flag;
-        },
-        ready : function() {
-        },  //加载完毕的回调
-        success : function(params) { //成功的回调
-            // params为返回的二次验证参数 需要在接下来的实现逻辑回传服务器
-            //向后台发送处理数据
-            var phone = $("#phone").val();
-            $.ajax({
-                url: '/getValidateCode',
-                data: {
-                    'phone': phone
-                },
-                method: 'POST',
-                success: function (data) {
-                }
-            }) ;
-
-            //3.校验成功开启定时 60s后才可以重新获取 同时应该是递减显示
-
-            curCount1 = count;
-            $("#btnSendCode").attr("disabled","true");
-            $("#btnSendCode").val( + curCount1 + "秒再获取");
-            InterValObj1 = window.setInterval(SetRemainTime1, 1000); //启动计时器，1秒执行一次
-        },
-        error : function() {}        //失败的回调
-    });
 
     function SetRemainTime1() {
         if (curCount1 == 0) {
@@ -538,6 +495,49 @@
     function checkPhone() {
         var phone = $.trim($("#phone").val());
         if(phoneReg.test(phone)) {
+            //1.图形滑动验证码校验 防止流量攻击
+            $('#mpanel').slideVerify({
+                baseUrl:'http://localhost:9000',  //服务器请求地址, 默认地址为安吉服务器;
+                mode:'pop',     //展示模式
+                containerId:'codeContainer',//pop模式 必填 被点击之后出现行为验证码的元素id
+                imgSize : {       //图片的大小对象,有默认值{ width: '310px',height: '155px'},可省略
+                    width: '400px',
+                    height: '200px',
+                },
+                barSize:{          //下方滑块的大小对象,有默认值{ width: '310px',height: '50px'},可省略
+                    width: '400px',
+                    height: '40px',
+                },
+                beforeCheck:function(){  //检验参数合法性的函数  mode ="pop"有效
+                    var flag = true;
+                    //实现: 参数合法性的判断逻辑, 返回一个boolean值
+                    return flag;
+                },
+                ready : function() {
+                },  //加载完毕的回调
+                success : function(params) { //成功的回调
+                    // params为返回的二次验证参数 需要在接下来的实现逻辑回传服务器
+                    //向后台发送处理数据
+                    var phone = $("#phone").val();
+                    $.ajax({
+                        url: '/getValidateCode',
+                        data: {
+                            'phone': phone
+                        },
+                        method: 'POST',
+                        success: function (data) {
+                        }
+                    }) ;
+
+                    //3.校验成功开启定时 60s后才可以重新获取 同时应该是递减显示
+
+                    curCount1 = count;
+                    $("#btnSendCode").attr("disabled","true");
+                    $("#btnSendCode").val( + curCount1 + "秒再获取");
+                    InterValObj1 = window.setInterval(SetRemainTime1, 1000); //启动计时器，1秒执行一次
+                },
+                error : function() {}        //失败的回调
+            });
             $("#codeContainer").click();
         }else{
             alert("请输入正确的手机号!");

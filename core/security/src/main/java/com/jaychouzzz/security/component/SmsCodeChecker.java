@@ -1,0 +1,45 @@
+package com.jaychouzzz.security.component;
+
+import cn.hutool.core.util.StrUtil;
+import com.jaychouzzz.security.support.PhoneSmsCodeAuthenticationToken;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
+
+/**
+ * @Classname SmsCodeChecker
+ * @description 验证码校验器
+ * @Author chuanfang
+ * @Date 2020/6/9 17:14
+ * @Version 1.0
+ */
+@Component
+@AllArgsConstructor
+@Slf4j
+public class SmsCodeChecker {
+
+    private RedisService redisService;
+
+    public Boolean check(PhoneSmsCodeAuthenticationToken token) {
+        String phone = (String) token.getPrincipal();
+        String smsCode = (String) token.getCredentials();
+
+        boolean flag;
+        log.info("---验证码校验开始---");
+        //检测redis中是否有此key(phone) 或者 过期
+        flag = redisService.hasKey(phone);
+        if(!flag) {
+            log.error("key不存在或者过期");
+            return false;
+        }
+        //检测key对应的value是否正确
+        String value = (String) redisService.get(phone);
+        if(!StrUtil.equalsIgnoreCase(smsCode, value)) {
+            log.error("验证码不正确");
+            return false;
+        }
+        return true;
+    }
+
+}

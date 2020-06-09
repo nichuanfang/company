@@ -1,5 +1,6 @@
 package com.jaychouzzz.security.config;
 
+import com.jaychouzzz.security.component.SmsCodeChecker;
 import com.jaychouzzz.security.handler.MyLoginFailureHandler;
 import com.jaychouzzz.security.handler.MyLoginSuccessfulHandler;
 import com.jaychouzzz.security.properties.SecurityProperties;
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -41,10 +43,14 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     private UserDetailsService userDetailsService;
 
+    private SmsCodeChecker smsCodeChecker;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
         http
+                .apply(new SmsConfigurer(smsCodeChecker))
+                .and()
                 //表单登录配置  包括用户名密码登录  或者自定义表单登录(短信验证码)
                 .formLogin()
                 //页面可配置 默认配置<应用配置<请求配置

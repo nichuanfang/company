@@ -48,10 +48,9 @@ public class ISmsManagerImpl implements ISmsManager {
         if(StrUtil.isBlank(phone)) {
             throw new RuntimeException("手机号不存在");
         }
-        String smsKey = "sms_code";
         String code = "" + RandomUtil.randomString(RandomUtil.BASE_NUMBER, 6);
         lockUtils.commonBusiness(() -> {
-            redisTemplate.opsForValue().set(smsKey, code, 60, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(phone, code, 60, TimeUnit.SECONDS);
         }, code);
         //发送短信
         try {
@@ -63,7 +62,7 @@ public class ISmsManagerImpl implements ISmsManager {
         } catch (QiniuException e) {
             //短信发送失败要移除redis
             lockUtils.commonBusiness(() -> {
-                redisTemplate.opsForValue().set(smsKey, "");
+                redisTemplate.opsForValue().set(phone, "");
             }, code);
             HttpServletResponse response = WebUtils.obtainHttpServletResponse();
             response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
