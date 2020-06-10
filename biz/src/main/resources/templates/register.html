@@ -32,7 +32,6 @@
     <!-- /Fonts -->
     <link href="../static/css/googleapis.poppins.css" rel="stylesheet">
     <link href="../static/css/googleapis.playfair.css" rel="stylesheet">
-    <link href="../static/css/verify.css" rel="stylesheet">
 </head>
 
 <body>
@@ -338,9 +337,6 @@
 <script src="../static/js/move-top.js"></script>
 <script src="../static/js/easing.js"></script>
 <script src="../static/js/base64.min.js"></script>
-<script src="../static/js/crypto-js.js"></script>
-<script src="../static/js/ase.js"></script>
-<script type="text/javascript" src="../static/js/verify.js" ></script>
 <script>
     jQuery(document).ready(function ($) {
         $(".scroll").click(function (event) {
@@ -384,7 +380,7 @@
                 "Authentication": transform(username,password)
             },
             success: function (response) {
-                window.prompt("注册成功","请登录");
+                window.alert("注册成功,请登录");
                 window.location = "/"+response;
             },
             error: function (error) {
@@ -405,32 +401,6 @@
         //阻止默认表单提交,同时保留默认验证策略
         return false;
     }
-
-    // 初始化验证码  弹出式
-    $('#mpanel').slideVerify({
-        baseUrl:'https://mirror.anji-plus.com/captcha-api',  //服务器请求地址, 默认地址为安吉服务器;
-        mode:'pop',     //展示模式
-        containerId:'btn',//pop模式 必填 被点击之后出现行为验证码的元素id
-        imgSize : {       //图片的大小对象,有默认值{ width: '310px',height: '155px'},可省略
-            width: '400px',
-            height: '200px',
-        },
-        barSize:{          //下方滑块的大小对象,有默认值{ width: '310px',height: '50px'},可省略
-            width: '400px',
-            height: '40px',
-        },
-        beforeCheck:function(){  //检验参数合法性的函数  mode ="pop"有效
-            let flag = true;
-            //实现: 参数合法性的判断逻辑, 返回一个boolean值
-            return flag
-        },
-        ready : function() {},  //加载完毕的回调
-        success : function(params) { //成功的回调
-            // params为返回的二次验证参数 需要在接下来的实现逻辑回传服务器
-
-        },
-        error : function() {}        //失败的回调
-    });
 
 </script>
 <!--// end-smoth-scrolling -->

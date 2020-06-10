@@ -87,7 +87,7 @@ public class IUserManagerImpl implements IUserManager {
             }
         } catch (Exception e) {
             response.setStatus(HttpStatus.HTTP_INTERNAL_ERROR);
-            throw new UserInsertException("Insert failed: "+e.getMessage());
+            throw new UserInsertException("Insert failed: "+e.getCause());
         }
         //4.发送短信至指定手机告知用户注册成功
         //5.创建成功跳转至登录页,失败则返回注册页,提示错误信息500服务器繁忙请稍后尝试

@@ -3,6 +3,7 @@ package com.jaychouzzz.biz.web.service.serviceimpl;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpStatus;
+import com.jaychouzzz.biz.web.config.MyUserDetailsService;
 import com.jaychouzzz.biz.web.service.ISmsManager;
 import com.jaychouzzz.biz.web.service.SmsTemplateManager;
 import com.jaychouzzz.common.constants.AuditStatus;
@@ -16,6 +17,8 @@ import com.qiniu.sms.SmsManager;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
@@ -42,11 +45,15 @@ public class ISmsManagerImpl implements ISmsManager {
 
     private RedisTemplate redisTemplate;
 
+    private MyUserDetailsService myUserDetailsService;
+
 
     @Override
     public void sendSmsCode(String phone) {
-        if(StrUtil.isBlank(phone)) {
-            throw new RuntimeException("手机号不存在");
+        //判断账户存在性可用性
+        User user = myUserDetailsService.loadUserByPhone(phone);
+        if(user==null) {
+            throw new InternalAuthenticationServiceException("user is not exist!");
         }
         String code = "" + RandomUtil.randomString(RandomUtil.BASE_NUMBER, 6);
         lockUtils.commonBusiness(() -> {

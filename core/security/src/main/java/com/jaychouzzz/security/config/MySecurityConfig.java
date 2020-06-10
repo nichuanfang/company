@@ -1,5 +1,6 @@
 package com.jaychouzzz.security.config;
 
+import com.jaychouzzz.security.component.AccountChecker;
 import com.jaychouzzz.security.component.SmsCodeChecker;
 import com.jaychouzzz.security.handler.MyLoginFailureHandler;
 import com.jaychouzzz.security.handler.MyLoginSuccessfulHandler;
@@ -45,11 +46,15 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     private SmsCodeChecker smsCodeChecker;
 
+    private AccountChecker accountChecker;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
-
+        SmsConfigurer smsConfigurer = new SmsConfigurer(smsCodeChecker,accountChecker);
+        smsConfigurer.setAuthenticationSuccessHandler(myLoginSuccessfulHandler);
+        smsConfigurer.setAuthenticationFailureHandler(myLoginFailureHandler);
         http
-                .apply(new SmsConfigurer(smsCodeChecker))
+                .apply(smsConfigurer)
                 .and()
                 //表单登录配置  包括用户名密码登录  或者自定义表单登录(短信验证码)
                 .formLogin()

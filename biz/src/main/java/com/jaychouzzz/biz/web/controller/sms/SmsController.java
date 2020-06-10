@@ -28,7 +28,7 @@ public class SmsController {
         //根据(业务类型+业务名称)获取短信模板  业务类型<->模板类型  业务名称<->正则匹配模板名称
         // 模板名称命名规则:   businessKey*templateName        example: login*validate_code
         //
-//        smsManager.sendSmsCode(phone);
+        smsManager.sendSmsCode(phone);
     }
 
 }

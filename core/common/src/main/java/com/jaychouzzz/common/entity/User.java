@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.MybatisEnumTypeHandler;
 import com.jaychouzzz.common.enums.AccountStatus;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @Classname User
@@ -15,6 +16,7 @@ import lombok.Data;
  * @Date 2020/5/14 15:36
  * @Version 1.0
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("USER")
 public class User extends BaseEntity{

@@ -20,14 +20,26 @@ import com.jaychouzzz.security.support.PhoneSmsCodeAuthenticationToken;
 import org.springframework.lang.Nullable;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationServiceException;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
+import org.springframework.security.authentication.event.InteractiveAuthenticationSuccessEvent;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.session.NullAuthenticatedSessionStrategy;
+import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.util.Assert;
 
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * Processes an authentication form submission. Called
@@ -48,6 +60,15 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SmsAuthenticationFilter extends
 		AbstractAuthenticationProcessingFilter {
+
+	private AuthenticationSuccessHandler authenticationSuccessHandler;
+
+	private AuthenticationFailureHandler authenticationFailureHandler;
+
+	private SessionAuthenticationStrategy sessionStrategy = new NullAuthenticatedSessionStrategy();
+
+	private boolean continueChainBeforeSuccessfulAuthentication = false;
+
 	// ~ Static fields/initializers
 	// =====================================================================================
 
@@ -60,6 +81,92 @@ public class SmsAuthenticationFilter extends
 
 	// ~ Constructors
 	// ===================================================================================================
+
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+			throws IOException, ServletException {
+
+		HttpServletRequest request = (HttpServletRequest) req;
+		HttpServletResponse response = (HttpServletResponse) res;
+
+		if (!requiresAuthentication(request, response)) {
+			chain.doFilter(request, response);
+
+			return;
+		}
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Request is to process authentication");
+		}
+
+		Authentication authResult;
+
+		try {
+			authResult = attemptAuthentication(request, response);
+			if (authResult == null) {
+				// return immediately as subclass has indicated that it hasn't completed
+				// authentication
+				return;
+			}
+			sessionStrategy.onAuthentication(authResult, request, response);
+		}
+		catch (InternalAuthenticationServiceException failed) {
+			logger.error(
+					"An internal error occurred while trying to authenticate the user.",
+					failed);
+			unsuccessfulAuthentication(request, response, failed);
+
+			return;
+		}
+		catch (AuthenticationException failed) {
+			// Authentication failed
+			unsuccessfulAuthentication(request, response, failed);
+
+			return;
+		}
+
+		// Authentication success
+		if (continueChainBeforeSuccessfulAuthentication) {
+			chain.doFilter(request, response);
+		}
+
+		successfulAuthentication(request, response, chain, authResult);
+	}
+
+	@Override
+	public void unsuccessfulAuthentication(HttpServletRequest request,
+									HttpServletResponse response, AuthenticationException failed)
+			throws IOException, ServletException {
+		SecurityContextHolder.clearContext();
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Authentication request failed: " + failed.toString(), failed);
+			logger.debug("Updated SecurityContextHolder to contain null Authentication");
+			logger.debug("Delegating to authentication failure handler " + authenticationFailureHandler);
+		}
+
+		authenticationFailureHandler.onAuthenticationFailure(request, response, failed);
+	}
+
+	@Override
+	public void successfulAuthentication(HttpServletRequest request,
+											HttpServletResponse response, FilterChain chain, Authentication authResult)
+			throws IOException, ServletException {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Authentication success. Updating SecurityContextHolder to contain: "
+					+ authResult);
+		}
+
+		SecurityContextHolder.getContext().setAuthentication(authResult);
+
+		// Fire event
+		if (this.eventPublisher != null) {
+			eventPublisher.publishEvent(new InteractiveAuthenticationSuccessEvent(
+					authResult, this.getClass()));
+		}
+		authenticationSuccessHandler.onAuthenticationSuccess(request, response, authResult);
+	}
 
 	public SmsAuthenticationFilter(AuthenticationManager manager) {
 		super(new AntPathRequestMatcher("/mobile/login", "POST"));
@@ -186,5 +293,23 @@ public class SmsAuthenticationFilter extends
 
 	public final String getSmsCodeParameter() {
 		return smsCodeParameter;
+	}
+
+	public AuthenticationSuccessHandler getAuthenticationSuccessHandler() {
+		return authenticationSuccessHandler;
+	}
+
+	@Override
+	public void setAuthenticationSuccessHandler(AuthenticationSuccessHandler authenticationSuccessHandler) {
+		this.authenticationSuccessHandler = authenticationSuccessHandler;
+	}
+
+	public AuthenticationFailureHandler getAuthenticationFailureHandler() {
+		return authenticationFailureHandler;
+	}
+
+	@Override
+	public void setAuthenticationFailureHandler(AuthenticationFailureHandler authenticationFailureHandler) {
+		this.authenticationFailureHandler = authenticationFailureHandler;
 	}
 }

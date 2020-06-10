@@ -184,9 +184,9 @@
                     <form action="/mobile/login" method="post" id="mobileLogin">
                         <div class="form-group">
 
-                            <label>Phone Number*</label>
+                            <label>Phone Number*</label> &nbsp;&nbsp;<span style="color: red" id="error-span"></span>
                             <div class="icon1">
-                                <input autocomplete="off" placeholder="" name="phone" id="phone" type="text" required="">
+                                <input autocomplete="off" placeholder="" name="phone" id="phone" type="text" required="required" onfocus="handleException()">
                             </div>
                         </div>
 
@@ -194,7 +194,7 @@
                             <label for="smsCode">Sms Code*</label>
                             <div class="smsCode">
                                 <input id="smsCode" autocomplete="off" maxlength="6" minlength="6" placeholder=""
-                                       name="smsCode" type="text" required="">
+                                       name="smsCode" type="text" required="required">
                                 <input id="btnSendCode" type="button" class="btn btn-default" value="Send" onclick="checkPhone()">
                                 <button type="button" id="codeContainer" hidden="hidden"></button>
                             </div>
@@ -493,6 +493,8 @@
 
     //校验手机号
     function checkPhone() {
+        $('#mpanel').html("");
+        $('#codeContainer').html("");
         var phone = $.trim($("#phone").val());
         if(phoneReg.test(phone)) {
             //1.图形滑动验证码校验 防止流量攻击
@@ -526,15 +528,17 @@
                         },
                         method: 'POST',
                         success: function (data) {
+                            //3.校验成功开启定时 60s后才可以重新获取 同时应该是递减显示
+                            curCount1 = count;
+                            $("#btnSendCode").attr("disabled","true");
+                            $("#btnSendCode").val( + curCount1 + "秒再获取");
+                            InterValObj1 = window.setInterval(SetRemainTime1, 1000); //启动计时器，1秒执行一次
+                            $('#smsCode').focus();
+                        },
+                        error: function (error) {
+                            $('#error-span').html("user is not exist!");
                         }
                     }) ;
-
-                    //3.校验成功开启定时 60s后才可以重新获取 同时应该是递减显示
-
-                    curCount1 = count;
-                    $("#btnSendCode").attr("disabled","true");
-                    $("#btnSendCode").val( + curCount1 + "秒再获取");
-                    InterValObj1 = window.setInterval(SetRemainTime1, 1000); //启动计时器，1秒执行一次
                 },
                 error : function() {}        //失败的回调
             });
@@ -543,7 +547,11 @@
             alert("请输入正确的手机号!");
             return false;
         }
-        
+
+    }
+
+    function handleException() {
+        $('#error-span').html("")
     }
     
 </script>
