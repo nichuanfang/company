@@ -2,6 +2,14 @@ server:
   port: 9000
 
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 08d162b2ae5d485e228f
+            clientSecret: c462b9378de218da3f26de9d66db302fb4ad230a
+
   application:
     name: company
   datasource:
