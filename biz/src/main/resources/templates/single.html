@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Single</title>
@@ -80,9 +80,13 @@
                                 <a class="nav-link" href="/contact">Contact</a>
                             </li>
                         </ul>
-                        <div class="header-right">
+                        <div class="header-right" id="headerRight">
                             <a href="/signin" class="signin mr-4"> Sign in <i class="fas fa-sign-in-alt"></i></a>
                             <a href="/register" class="contact">Get Started</a>
+                        </div>
+                        <div class="header-right" id="accountInfoDiv">
+                            <a href="#" class="signin mr-4"><span id="accountName" style="text-decoration: underline"></span><i class="fas fa-sign-in-alt"></i></a>
+                            <a href="/logout" class="contact">Sign out</a>
                         </div>
                     </div>
                 </nav>
@@ -515,6 +519,27 @@
     </script>
     <script>
         $(document).ready(function() {
+            //headerRight 加载登录信息 如果未认证 就显示
+
+            $.ajax({
+                url: '/account',
+                data: {},
+                method: 'POST',
+                success: function (data) {
+                    debugger;
+                    if(data.authenticated) {
+                        $('#headerRight').hide();
+                        //渲染用户信息 以及下拉框
+                        $('#accountInfoDiv').show();
+                        $('#accountName').html(''+data.principal.username);
+                    }else{
+                        $('#headerRight').show();
+                        $('#accountInfoDiv').hide();
+                    }
+                },
+                error: function (error) {}
+            }) ;
+
             /*
             						var defaults = {
             							  containerID: 'toTop', // fading element id

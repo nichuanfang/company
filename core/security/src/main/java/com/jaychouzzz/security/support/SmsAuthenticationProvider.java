@@ -59,7 +59,7 @@ public class SmsAuthenticationProvider implements AuthenticationProvider {
 
     private Authentication createSuccessAuthentication(UserDetails userDetails) {
         log.info("用户"+userDetails.getUsername()+"登录成功,"+new Date());
-        return new PhoneSmsCodeAuthenticationToken(userDetails.getUsername(),userDetails.getPassword(),userDetails.getAuthorities());
+        return new PhoneSmsCodeAuthenticationToken(userDetails,userDetails.getPassword(),userDetails.getAuthorities());
     }
 
     private UserDetails obtainAccount(String phone) {

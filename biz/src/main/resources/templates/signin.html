@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Login</title>
@@ -147,7 +147,7 @@
                 <div class="col-lg-5 sign-info" data-aos="fade-right">
                     <div style="text-align: right"><a href="javascript:void(0)" onclick="switchLogin()"><span
                             id="loginDesc"
-                            style="text-decoration: underline">Switch to mobile login</span></a></div>
+                            style="text-decoration: underline">Mobile Login</span></a></div>
                     <h3 style="margin-top: 20px;margin-bottom: 20px">Sign in to your Account</h3>
                     <p class="para-sign mt-2 mb-4 text-center">Enter your details to create account.</p>
 
@@ -452,14 +452,14 @@
     //切换手机登录 modal展示
     function switchLogin() {
         if (flag === 'form') {
-            $('#loginDesc').html("Switch form login");
+            $('#loginDesc').html("Form Login");
             $("#formLogin").hide();
             $("#mobileLogin").show();
             $("#rmfp").hide();
             $("#createAccount").hide();
             flag = 'mobile';
         } else {
-            $('#loginDesc').html("Switch mobile login");
+            $('#loginDesc').html("Mobile Login");
             $("#formLogin").show();
             $("#mobileLogin").hide();
             $("#rmfp").show();
@@ -544,7 +544,7 @@
             });
             $("#codeContainer").click();
         }else{
-            alert("请输入正确的手机号!");
+            $('#error-span').html("请输入正确的手机号!");
             return false;
         }
 

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 @AllArgsConstructor
-public class RegisterController {
+public class RegisterCtl {
 
     private IUserManager userManager;
 
