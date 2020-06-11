@@ -4,6 +4,7 @@ import com.jaychouzzz.security.component.AccountChecker;
 import com.jaychouzzz.security.component.SmsCodeChecker;
 import com.jaychouzzz.security.handler.MyLoginFailureHandler;
 import com.jaychouzzz.security.handler.MyLoginSuccessfulHandler;
+import com.jaychouzzz.security.manager.SecurityAuthorityManager;
 import com.jaychouzzz.security.properties.SecurityProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,8 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     private AccountChecker accountChecker;
 
+    private SecurityAuthorityManager authorityManager;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
         SmsConfigurer smsConfigurer = new SmsConfigurer(smsCodeChecker,accountChecker);
@@ -81,12 +84,15 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //授权配置
                 .authorizeRequests()
-                .antMatchers(securityProperties.getLogin().getLoginPage()
-                        , securityProperties.getRegister().getRegisterUrl()
-                        , securityProperties.getRegister().getRegisterProcessingUrl()
-                        , securityProperties.getLogin().getErrorPage()
-                        ,securityProperties.getImage().getCaptchaPathRegex()
-                        ,securityProperties.getSms().getValidateCodePath())
+                .antMatchers(
+                        authorityManager.antPatterns()
+//                        securityProperties.getLogin().getLoginPage()
+//                        , securityProperties.getRegister().getRegisterUrl()
+//                        , securityProperties.getRegister().getRegisterProcessingUrl()
+//                        , securityProperties.getLogin().getErrorPage()
+//                        ,securityProperties.getImage().getCaptchaPathRegex()
+//                        ,securityProperties.getSms().getValidateCodePath()
+                )
                 .permitAll()
                 //剩下的请求需要认证
                 .anyRequest()
