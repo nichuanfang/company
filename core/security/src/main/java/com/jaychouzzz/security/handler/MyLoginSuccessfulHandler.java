@@ -27,7 +27,7 @@ public class MyLoginSuccessfulHandler extends SavedRequestAwareAuthenticationSuc
         if(authentication instanceof OAuth2AuthenticationToken) {
             OAuth2AuthenticationToken token = (OAuth2AuthenticationToken) authentication;
             String registrationId = token.getAuthorizedClientRegistrationId();
-            log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("login"));
+            log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("name"));
         }else {
             log.debug("登录成功");
         }
