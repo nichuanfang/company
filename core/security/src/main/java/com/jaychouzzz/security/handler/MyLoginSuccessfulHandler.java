@@ -1,5 +1,6 @@
 package com.jaychouzzz.security.handler;
 
+import com.jaychouzzz.common.constants.AuthorizeType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
@@ -27,7 +28,11 @@ public class MyLoginSuccessfulHandler extends SavedRequestAwareAuthenticationSuc
         if(authentication instanceof OAuth2AuthenticationToken) {
             OAuth2AuthenticationToken token = (OAuth2AuthenticationToken) authentication;
             String registrationId = token.getAuthorizedClientRegistrationId();
-            log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("name"));
+            if(token.getAuthorizedClientRegistrationId().equalsIgnoreCase(AuthorizeType.GITHUB)) {
+                log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("login"));
+            }else {
+                log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("name"));
+            }
         }else {
             log.debug("登录成功");
         }

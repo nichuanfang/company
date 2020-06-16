@@ -16,6 +16,11 @@ spring:
           facebook:
             clientId: 873946913127233
             clientSecret: f170c7b09da97defc88dde20b2f7482e
+          twitter:
+            clientId: gngJBDhX9tfFBRYL0gna5iqPN
+            clientSecret: VbWK9Se19FbSyyncJ6caClf6YOjBTuxvFwfji3dlSQccR3J5r8
+            provider: twitter
+
 
   application:
     name: company

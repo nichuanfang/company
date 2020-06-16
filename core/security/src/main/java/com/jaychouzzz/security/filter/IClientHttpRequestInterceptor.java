@@ -22,7 +22,6 @@ public class IClientHttpRequestInterceptor implements ClientHttpRequestIntercept
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
-        log.info(request.getURI().getPath());
         return execution.execute(request,body);
     }
 }

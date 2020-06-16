@@ -30,5 +30,9 @@ public interface AuthorizeType {
      * linkedin
      */
     String LINKEDIN = "linkedin";
+    /**
+     * instagram
+     */
+    String INSTAGRAM = "instagram";
 
 }
