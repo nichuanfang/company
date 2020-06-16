@@ -25,8 +25,14 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import javax.crypto.spec.SecretKeySpec;
 
+import com.jaychouzzz.security.jwt.INimbusJwtDecoder;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.core.env.Environment;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.OAuth2Error;
@@ -42,7 +48,6 @@ import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtDecoderFactory;
-import org.springframework.security.oauth2.jwt.JwtTimestampValidator;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
@@ -67,7 +72,8 @@ import static org.springframework.security.oauth2.jwt.NimbusJwtDecoder.withSecre
  * @see OidcIdToken
  */
 @Component
-public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<ClientRegistration> {
+public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<ClientRegistration>, ApplicationContextAware {
+    private ApplicationContext applicationContext;
     private static final String MISSING_SIGNATURE_VERIFIER_ERROR_CODE = "missing_signature_verifier";
     private static Map<JwsAlgorithm, String> jcaAlgorithmMappings = new HashMap<JwsAlgorithm, String>() {
         {
@@ -79,11 +85,15 @@ public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<Clien
     private static final Converter<Map<String, Object>, Map<String, Object>> DEFAULT_CLAIM_TYPE_CONVERTER =
             new ClaimTypeConverter(createDefaultClaimTypeConverters());
     private final Map<String, JwtDecoder> jwtDecoders = new ConcurrentHashMap<>();
-    private Function<ClientRegistration, OAuth2TokenValidator<Jwt>> jwtValidatorFactory = new DefaultOidcIdTokenValidatorFactory();
+    private Function<ClientRegistration, OAuth2TokenValidator<Jwt>> jwtValidatorFactory = new MyOidcIdTokenValidatorFactory();
     private Function<ClientRegistration, JwsAlgorithm> jwsAlgorithmResolver = clientRegistration -> SignatureAlgorithm.RS256;
     private Function<ClientRegistration, Converter<Map<String, Object>, Map<String, Object>>> claimTypeConverterFactory =
             clientRegistration -> DEFAULT_CLAIM_TYPE_CONVERTER;
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
     /**
      * Returns the default {@link Converter}'s used for type conversion of claim values for an {@link OidcIdToken}.
      *
@@ -116,11 +126,16 @@ public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<Clien
         return source -> ClaimConversionService.getSharedInstance().convert(source, sourceDescriptor, targetDescriptor);
     }
 
+    /**
+     * 入口
+     * @param clientRegistration 客户端注册信息
+     * @return jwt解码器
+     */
     @Override
     public JwtDecoder createDecoder(ClientRegistration clientRegistration) {
         Assert.notNull(clientRegistration, "clientRegistration cannot be null");
         return this.jwtDecoders.computeIfAbsent(clientRegistration.getRegistrationId(), key -> {
-            NimbusJwtDecoder jwtDecoder = buildDecoder(clientRegistration);
+            INimbusJwtDecoder jwtDecoder = buildDecoder(clientRegistration);
             jwtDecoder.setJwtValidator(this.jwtValidatorFactory.apply(clientRegistration));
             Converter<Map<String, Object>, Map<String, Object>> claimTypeConverter =
                     this.claimTypeConverterFactory.apply(clientRegistration);
@@ -131,7 +146,13 @@ public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<Clien
         });
     }
 
-    private NimbusJwtDecoder buildDecoder(ClientRegistration clientRegistration) {
+    /**
+     * 关键设置
+     * @param clientRegistration 客户端注册信息
+     * @return 解码器
+     */
+    private INimbusJwtDecoder buildDecoder(ClientRegistration clientRegistration) {
+        //算法
         JwsAlgorithm jwsAlgorithm = this.jwsAlgorithmResolver.apply(clientRegistration);
         if (jwsAlgorithm != null && SignatureAlgorithm.class.isAssignableFrom(jwsAlgorithm.getClass())) {
             // https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation
@@ -157,7 +178,8 @@ public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<Clien
                 );
                 throw new OAuth2AuthenticationException(oauth2Error, oauth2Error.toString());
             }
-            return withJwkSetUri(jwkSetUri).jwsAlgorithm((SignatureAlgorithm) jwsAlgorithm).build();
+            return INimbusJwtDecoder.withJwkSetUri(jwkSetUri).jwsAlgorithm((SignatureAlgorithm) jwsAlgorithm)
+                    .withContext(applicationContext).build();
         } else if (jwsAlgorithm != null && MacAlgorithm.class.isAssignableFrom(jwsAlgorithm.getClass())) {
             // https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation
             //
@@ -181,7 +203,7 @@ public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<Clien
             }
             SecretKeySpec secretKeySpec = new SecretKeySpec(
                     clientSecret.getBytes(StandardCharsets.UTF_8), jcaAlgorithmMappings.get(jwsAlgorithm));
-            return withSecretKey(secretKeySpec).macAlgorithm((MacAlgorithm) jwsAlgorithm).build();
+            return INimbusJwtDecoder.withSecretKey(secretKeySpec).macAlgorithm((MacAlgorithm) jwsAlgorithm).build();
         }
 
         OAuth2Error oauth2Error = new OAuth2Error(
@@ -197,7 +219,6 @@ public final class IOidcIdTokenDecoderFactory implements JwtDecoderFactory<Clien
 
     /**
      * Sets the factory that provides an {@link OAuth2TokenValidator}, which is used by the {@link JwtDecoder}.
-     * The default composes {@link JwtTimestampValidator} and {@link OidcIdTokenValidator}.
      *
      * @param jwtValidatorFactory the factory that provides an {@link OAuth2TokenValidator}
      */

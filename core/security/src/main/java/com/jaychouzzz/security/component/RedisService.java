@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @Classname RedisService
- * @description
+ * @description redis服务
  * @Author chuanfang
  * @Date 2020/5/19 16:37
  * @Version 1.0

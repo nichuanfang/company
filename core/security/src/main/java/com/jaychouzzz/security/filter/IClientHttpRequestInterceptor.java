@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  * @Classname IClientHttpRequestInterceptor
- * @description
+ * @description  拦截处理通过restTemplate发送的请求
  * @Author chuanfang
  * @Date 2020/6/16 13:58
  * @Version 1.0
