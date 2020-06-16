@@ -9,6 +9,13 @@ spring:
           github:
             clientId: 08d162b2ae5d485e228f
             clientSecret: c462b9378de218da3f26de9d66db302fb4ad230a
+            redirectUri: http://localhost:9000/login/oauth2/code/github
+          google:
+            clientId: 489690112255-if8oaas377e2pbn132vepe1a2um0t8if.apps.googleusercontent.com
+            clientSecret: 3jybbvgumvDArsNOYv85bFI5
+          facebook:
+            clientId: 873946913127233
+            clientSecret: f170c7b09da97defc88dde20b2f7482e
 
   application:
     name: company
@@ -43,6 +50,9 @@ jaychouzzz:
     lock-prefix: lock_
     expire-time: 60
   security:
+#    开启代理 解决无法访问google facebook等问题
+    proxy:
+      enable-proxy: true
     login:
 #      配置用户名密码登录
       login-page: /form/authentication
@@ -110,3 +120,8 @@ captcha:
   aes:
     #aes.key(16位，和前端加密保持一致)
     key: XwKsGlMcdPMEhR1B
+logging:
+  level:
+    com:
+      jaychouzzz:
+        security: debug

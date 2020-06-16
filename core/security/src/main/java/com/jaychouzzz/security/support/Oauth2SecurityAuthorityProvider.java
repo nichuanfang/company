@@ -1,6 +1,5 @@
 package com.jaychouzzz.security.support;
 
-import com.jaychouzzz.security.properties.SecurityProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +20,6 @@ public class Oauth2SecurityAuthorityProvider implements SecurityAuthorityProvide
     @Override
     public List<String> grantAuthority() {
         ArrayList<String> authorities = new ArrayList<>();
-        authorities.add("/authorize/**");
         return authorities;
     }
 

@@ -1,27 +1,21 @@
 package com.jaychouzzz.security.config;
 
 import com.jaychouzzz.security.component.AccountChecker;
+import com.jaychouzzz.security.component.CustomOauth2UserService;
+import com.jaychouzzz.security.component.MyAuthorizationCodeTokenResponseClient;
 import com.jaychouzzz.security.component.SmsCodeChecker;
 import com.jaychouzzz.security.handler.MyLoginFailureHandler;
 import com.jaychouzzz.security.handler.MyLoginSuccessfulHandler;
 import com.jaychouzzz.security.manager.SecurityAuthorityManager;
 import com.jaychouzzz.security.properties.SecurityProperties;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
-
-import javax.sql.DataSource;
 
 /**
  * @Classname MySecurityConfig
@@ -51,13 +45,24 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     private SecurityAuthorityManager authorityManager;
 
+    private CustomOauth2UserService oauth2UserService;
+
+    /**
+     * 获取 access_token的客户端
+     */
+    private MyAuthorizationCodeTokenResponseClient tokenResponseClient;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        SmsConfigurer smsConfigurer = new SmsConfigurer(smsCodeChecker,accountChecker);
-        smsConfigurer.setAuthenticationSuccessHandler(myLoginSuccessfulHandler);
-        smsConfigurer.setAuthenticationFailureHandler(myLoginFailureHandler);
         http
-                .apply(smsConfigurer)
+                .apply(
+                        SmsConfigurer.builder()
+                                .smsCodeChecker(smsCodeChecker)
+                                .accountChecker(accountChecker)
+                                .authenticationSuccessHandler(myLoginSuccessfulHandler)
+                                .authenticationFailureHandler(myLoginFailureHandler)
+                                .build()
+                )
                 .and()
                 //表单登录配置  包括用户名密码登录  或者自定义表单登录(短信验证码)
                 .formLogin()
@@ -89,8 +94,18 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 //剩下的请求需要认证
                 .anyRequest()
                 .authenticated()
-                //跨域防护
                 .and()
+                //oauth2配置
+                .oauth2Login(
+                        MyOauth2LoginConfigurer.builder()
+                                .successHandler(myLoginSuccessfulHandler)
+                                .failureHandler(myLoginFailureHandler)
+                                //fq必须配置下面两项+启用代理
+                                .tokenResponseClient(tokenResponseClient)
+                                .oauth2UserService(oauth2UserService)
+                                .build()
+                )
+                //跨域防护
                 .csrf()
                 .disable();
     }

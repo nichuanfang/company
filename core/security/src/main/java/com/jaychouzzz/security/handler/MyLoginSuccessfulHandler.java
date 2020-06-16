@@ -2,6 +2,7 @@ package com.jaychouzzz.security.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
@@ -23,7 +24,13 @@ public class MyLoginSuccessfulHandler extends SavedRequestAwareAuthenticationSuc
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
-        log.debug("登录成功");
+        if(authentication instanceof OAuth2AuthenticationToken) {
+            OAuth2AuthenticationToken token = (OAuth2AuthenticationToken) authentication;
+            String registrationId = token.getAuthorizedClientRegistrationId();
+            log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("login"));
+        }else {
+            log.debug("登录成功");
+        }
         super.onAuthenticationSuccess(httpServletRequest,httpServletResponse,authentication);
     }
 }

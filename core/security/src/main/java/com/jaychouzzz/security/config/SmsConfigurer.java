@@ -4,6 +4,7 @@ import com.jaychouzzz.security.component.AccountChecker;
 import com.jaychouzzz.security.component.SmsCodeChecker;
 import com.jaychouzzz.security.filter.SmsAuthenticationFilter;
 import com.jaychouzzz.security.support.SmsAuthenticationProvider;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +24,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 public class SmsConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
 
     private SmsCodeChecker smsCodeChecker;
@@ -32,11 +34,6 @@ public class SmsConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilt
     private AuthenticationSuccessHandler authenticationSuccessHandler;
 
     private AuthenticationFailureHandler authenticationFailureHandler;
-
-    SmsConfigurer(SmsCodeChecker smsCodeChecker,AccountChecker accountChecker) {
-        this.smsCodeChecker = smsCodeChecker;
-        this.accountChecker = accountChecker;
-    }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {

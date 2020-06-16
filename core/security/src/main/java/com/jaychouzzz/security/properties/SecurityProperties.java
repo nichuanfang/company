@@ -39,5 +39,10 @@ public class SecurityProperties {
      */
     @NestedConfigurationProperty
     private RememberMeProperties rememberMe = new RememberMeProperties();
+    /**
+     * restTemplate代理配置 解决不能访问google facebook
+     */
+    @NestedConfigurationProperty
+    private ProxyProperties proxy = new ProxyProperties();
 
 }

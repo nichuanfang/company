@@ -32,7 +32,8 @@ public class LoginFailHanlder extends MyLoginFailureHandler {
         log.error("登录错误:"+e.getLocalizedMessage());
         if(e.getCause() instanceof NullPointerException) {
             redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/errorPage?msg=Error: User is not exists!");
-        }else{
+        }
+        else{
             redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/errorPage?msg=Error: "+e.getMessage());
         }
     }
