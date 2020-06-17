@@ -19,5 +19,9 @@ public class ImageValidateCodeProperties extends ValidateCodeProperties{
      * 图形验证码宽度
      */
     private Integer width = 30;
+    /**
+     * 图形验证码获取路径正则 校验接口
+     */
+    private String captchaPathRegex = "/captcha/**";
 
 }

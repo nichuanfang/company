@@ -1,0 +1,62 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: company
+  datasource:
+    url: jdbc:mysql://localhost:3306/company
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+#  模板引擎配置
+  thymeleaf:
+    cache: false
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+#  redis配置
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 5000
+
+jaychouzzz:
+  security:
+    login:
+#      配置用户名密码登录
+      login-page: /form/authentication
+      login-processing-url: /form/login
+    image:
+      expire-time: 40
+    sms:
+      code-length: 4
+      expire-time: 60
+    register:
+      register-url: /register
+      register-processing-url: /handleRegister
+#  雪花算法配置
+  xsequence:
+    snowflake:
+#      业务名称
+      biz-name: company
+#      步长
+      step: 1100
+#      起始值
+      step-start: 0
+#      数据中心id
+#      datacenter-id: ${DATACENTER-ID:08209270}
+#      机器id
+#      worker-id: ${SPRING.APPLICATION.NAME:company}
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-enums-package: com.jaychouzzz.common.enums
+

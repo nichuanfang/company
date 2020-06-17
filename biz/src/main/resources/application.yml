@@ -1,35 +1,3 @@
-server:
-  port: 9000
-
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/company
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-#  模板引擎配置
-  thymeleaf:
-    cache: false
-    enabled: true
-    prefix: classpath:/templates/
-    suffix: .html
-    mode: HTML
-
-jaychouzzz:
-  security:
-    login:
-#      配置用户名密码登录
-      login-page: /form/authentication
-      login-processing-url: /form/login
-    image:
-      expire-time: 40
-    sms:
-      code-length: 4
-      expire-time: 60
-    register:
-      register-url: /register
-      register-processing-url: /handleRegister
-
-mybatis-plus:
-  mapper-locations: classpath:/mapper/*.xml
-
+  profiles:
+    active: local

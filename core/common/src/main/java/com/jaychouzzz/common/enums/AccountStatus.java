@@ -1,6 +1,13 @@
 package com.jaychouzzz.common.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
+import com.baomidou.mybatisplus.core.enums.IEnum;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.Data;
 import lombok.Getter;
+
+import java.util.Objects;
 
 /**
  * @Classname AccountStatus
@@ -10,7 +17,7 @@ import lombok.Getter;
  * @Version 1.0
  */
 @Getter
-public enum AccountStatus {
+public enum AccountStatus implements IEnum<Integer> {
     /**
      * 激活
      */
@@ -24,9 +31,9 @@ public enum AccountStatus {
      */
     EXPIRED("过期",0);
     /**
-     * 状态码
+     * 状态码   数据库序列化的值
      */
-    private Integer code;
+    private int code;
     /**
      * 信息
      */
@@ -35,5 +42,10 @@ public enum AccountStatus {
     AccountStatus(String msg,Integer code) {
         this.code = code;
         this.msg = msg;
+    }
+
+    @Override
+    public Integer getValue() {
+        return code;
     }
 }

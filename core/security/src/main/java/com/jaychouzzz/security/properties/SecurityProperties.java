@@ -18,21 +18,31 @@ public class SecurityProperties {
      * 登录相关配置
      */
     @NestedConfigurationProperty
-    private LoginProperties login;
+    private LoginProperties login = new LoginProperties();
     /**
      * 注册相关配置
      */
     @NestedConfigurationProperty
-    private RegisterProperties register;
+    private RegisterProperties register = new RegisterProperties();
     /**
      * 短信验证码相关配置
      */
     @NestedConfigurationProperty
-    private ValidateCodeProperties sms;
+    private ValidateCodeProperties sms = new ValidateCodeProperties();
     /**
      * 图形验证码配置
      */
     @NestedConfigurationProperty
-    private ImageValidateCodeProperties image;
+    private ImageValidateCodeProperties image = new ImageValidateCodeProperties();
+    /**
+     * 记住我相关配置
+     */
+    @NestedConfigurationProperty
+    private RememberMeProperties rememberMe = new RememberMeProperties();
+    /**
+     * restTemplate代理配置 解决不能访问google facebook
+     */
+    @NestedConfigurationProperty
+    private ProxyProperties proxy = new ProxyProperties();
 
 }

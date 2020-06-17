@@ -2,6 +2,8 @@ package com.jaychouzzz.biz.web.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.jaychouzzz.common.entity.User;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @Classname UserMapper
@@ -11,4 +13,20 @@ import com.jaychouzzz.common.entity.User;
  * @Version 1.0
  */
 public interface UserMapper extends BaseMapper<User> {
+
+    /**
+     * 通过用户名查询用户信息
+     * @param username 用户名
+     * @return 用户实体
+     */
+    @Select("SELECT * FROM USER WHERE USERNAME = #{username}")
+    User selectByUserName(@Param("username") String username);
+
+    /**
+     * 通过手机号查询
+     * @param phone 手机号
+     * @return 用户
+     */
+    @Select("SELECT * FROM USER WHERE PHONE_NUMBER = #{phone}")
+    User selectByPhone(@Param("phone")String phone);
 }

@@ -19,10 +19,14 @@
         <module>sms</module>
         <module>sequence</module>
         <module>security</module>
+        <module>transaction</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
+        <!--        跳过主类检测,被依赖的模块可以不用配主类了-->
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+        <skipTests>true</skipTests>
     </properties>
 
     <dependencies>

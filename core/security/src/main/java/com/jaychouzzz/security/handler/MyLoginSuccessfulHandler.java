@@ -1,7 +1,9 @@
 package com.jaychouzzz.security.handler;
 
+import com.jaychouzzz.common.constants.AuthorizeType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
@@ -21,12 +23,19 @@ import java.io.IOException;
 @Slf4j
 public class MyLoginSuccessfulHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
-    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
-        log.debug("登录成功");
-        redirectStrategy.sendRedirect(httpServletRequest,httpServletResponse,"/index");
-//        super.onAuthenticationSuccess();
+        if(authentication instanceof OAuth2AuthenticationToken) {
+            OAuth2AuthenticationToken token = (OAuth2AuthenticationToken) authentication;
+            String registrationId = token.getAuthorizedClientRegistrationId();
+            if(token.getAuthorizedClientRegistrationId().equalsIgnoreCase(AuthorizeType.GITHUB)) {
+                log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("login"));
+            }else {
+                log.debug("已授权:"+registrationId+",用户:"+token.getPrincipal().getAttribute("name"));
+            }
+        }else {
+            log.debug("登录成功");
+        }
+        super.onAuthenticationSuccess(httpServletRequest,httpServletResponse,authentication);
     }
 }

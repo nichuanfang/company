@@ -1,8 +1,10 @@
 package com.jaychouzzz.biz.web.controller.principal;
 
+import com.anji.captcha.controller.CaptchaController;
 import com.jaychouzzz.biz.web.mapper.UserMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version 1.0
  */
 @RestController
-public class UserController {
+public class UserCtl {
 
 }

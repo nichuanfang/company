@@ -3,6 +3,7 @@ package com.jaychouzzz.common.entity;
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,12 +14,14 @@ import java.util.Date;
  * @Version 1.0
  */
 @Data
-public class BaseEntity{
+public class BaseEntity implements Serializable {
+
+    private static final long serialVersionUID = 3693222916620093774L;
     /**
-     * 主键
+     * 主键 基于雪花算法模块生成id
      */
-    @TableId(type = IdType.AUTO,value = "PK_ID")
-    private Integer pkId;
+    @TableId(type = IdType.ASSIGN_ID,value = "PK_ID")
+    private String pkId;
     /**
      * 创建时间
      */

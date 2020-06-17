@@ -1,3 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.jaychouzzz.security.config.MySecurityConfig,\
-  com.jaychouzzz.security.config.SecurityBeanConfig,\
-  com.jaychouzzz.security.component.AuthenticationController
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.jaychouzzz.security.SecurityAutoConfiguration

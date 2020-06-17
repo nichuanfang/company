@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Login</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="" />
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content=""/>
     <script>
-        addEventListener("load", function() {
+        addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
 
@@ -22,10 +22,10 @@
     <!-- Custom-Files -->
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
     <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="../static/css/portfolio.css">
     <link rel="stylesheet" href="../static/css/aos.css">
-    <link href='../static/css/aos-animation.css' rel='stylesheet prefetch' type="text/css" media="all" />
+    <link href='../static/css/aos-animation.css' rel='stylesheet prefetch' type="text/css" media="all"/>
 
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
@@ -34,324 +34,529 @@
     <!-- /Fonts -->
     <link href="../static/css/googleapis.poppins.css" rel="stylesheet">
     <link href="../static/css/googleapis.playfair.css" rel="stylesheet">
+    <link href="../static/css/verify.css" rel="stylesheet">
+    <style>
+        .smsCode {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            height: 70px;
+            background: none;
+            padding-top: 30px;
+            margin-top: -30px;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+            border-radius: 0;
+        }
 
+        #smsCode {
+            width: calc(100% - 90px);
+            height: 55px;
+            background: none;
+            padding-top: 20px;
+            border: 0;
+            outline: none;
+            text-align: center;
+            margin-top: -20px;
+            font-size: 16px;
+        }
+
+        #btnSendCode {
+            width: 90px;
+            height: 30px;
+            padding: 0 5px;
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+            background: transparent;
+            border-radius: 30px;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        #btnSendCode:hover {
+            background: #FC427B;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- mian-content -->
-    <div class="main-content" id="home">
-        <!-- header -->
-        <header class="py-1">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <h1>
-                        <a class="navbar-brand" href="/index"><i class="fa fa-ravelry" aria-hidden="true"></i></a>
-                    </h1>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+<!-- mian-content -->
+<div class="main-content" id="home">
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-4 m-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/about">About Us <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  More info <i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/features">Features</a>
-                                    <a class="dropdown-item" href="/blogs">Blogs</a>
-                                    <a class="dropdown-item" href="/features">Services</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  Dropdown <i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/gallery">Gallery</a>
-                                    <a class="dropdown-item" href="/about">About Us</a>
-                                    <a class="dropdown-item" href="/single">Single</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/contact">Contact</a>
-                            </li>
-                        </ul>
-                        <div class="header-right">
-                            <a href="/signin" class="signin mr-4"> Sign in <i class="fas fa-sign-in-alt"></i></a>
-                            <a href="/register" class="contact">Get Started</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- //header -->
-        <!-- banner-w3layouts -->
-        <section class="banner-w3layouts">
-            <div class="container">
-                <div class="row banner-w3layouts-grids">
-                    <div class="col-lg-5 sign-info" data-aos="fade-right">
-                        <h3>Sign in to your Account</h3>
-                        <p class="para-sign mt-2 mb-4 text-center">Enter your details to create account.</p>
+    <!-- header -->
+    <header class="py-1">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <h1>
+                    <a class="navbar-brand" href="/index"><i class="fa fa-ravelry" aria-hidden="true"></i></a>
+                </h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                        <form action="/form/login" method="post">
-                            <div class="form-group">
-
-                                <!--<label>User Email*</label>
-                                <div class="icon1">
-                                    <input placeholder="" name="mail" type="email" required="">
-                                </div>-->
-                                <label>User Name*</label>
-                                <div class="icon1">
-                                    <input placeholder="" name="username" type="text" required="">
-                                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-4 m-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/about">About Us <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More info <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/features">Features</a>
+                                <a class="dropdown-item" href="/blogs">Blogs</a>
+                                <a class="dropdown-item" href="/features">Services</a>
                             </div>
-                            <div class="form-group">
-
-                                <label>Password*</label>
-                                <div class="icon2">
-                                    <input placeholder="" name="password" type="password" required="">
-                                </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/gallery">Gallery</a>
+                                <a class="dropdown-item" href="/about">About Us</a>
+                                <a class="dropdown-item" href="/single">Single</a>
                             </div>
-                            <label class="anim">
-                                    <input type="checkbox" class="checkbox">
-                                        <span>Remember Me</span> 
-                                        <a href="#">Forgot Password</a>
-						    </label>
-                            <div class="clearfix"></div>
-                            <input type="submit" value="Sign in">
-                            <p class="para-sign mt-3">Don’t know an Account ? <a href="/register" class="ml-2"><strong>Create your Account</strong></a></p>
-                        </form>
-                    </div>
-                    <div class="col-lg-7 banner-w3layouts-image pl-md-5">
-                        <div class="effect-w3">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image1">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image2">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image3">
-                            <img src="../static/images/img4.jpg" alt="" class="img-fluid image4">
-                        </div>
-
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="header-right">
+                        <a href="/signin" class="signin mr-4"> Sign in <i class="fas fa-sign-in-alt"></i></a>
+                        <a href="/register" class="contact">Get Started</a>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- //banner-w3layouts -->
-    </div>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- banner-w3layouts -->
+    <section class="banner-w3layouts" style="padding-bottom: 135px;">
+        <div id="mpanel"></div>
+        <div class="container">
+            <div class="row banner-w3layouts-grids">
+                <div class="col-lg-5 sign-info" data-aos="fade-right">
+                    <div style="text-align: right"><a href="javascript:void(0)" onclick="switchLogin()"><span
+                            id="loginDesc"
+                            style="text-decoration: underline">Mobile Login</span></a></div>
+                    <h3 style="margin-top: 20px;margin-bottom: 20px">Sign in to your Account</h3>
+                    <p class="para-sign mt-2 mb-4 text-center">Enter your details to create account.</p>
 
-    <!--footer -->
-    <footer>
-        <section class="footer footer_1its py-5">
-            <div class="container py-md-4">
+                    <form action="/form/login" method="post" id="formLogin">
+                        <div class="form-group">
 
-                <div class="row footer-top mb-md-5 mb-4">
-                    <div class="col-lg-4 col-md-6 footer-grid_section_1its" data-aos="fade-right">
-                        <div class="footer-title-w3ls">
-                            <h3>Address</h3>
+                            <!--<label>User Email*</label>
+                            <div class="icon1">
+                                <input placeholder="" name="mail" type="email" required="">
+                            </div>-->
+                            <label>User Name*</label>
+                            <div class="icon1">
+                                <input placeholder="" name="username" type="text" required="">
+                            </div>
                         </div>
-                        <div class="footer-text">
-                            <p>Address : 1234 lock, Charlotte, North Carolina, United States</p>
-                            <p>Phone : +12 534894364</p>
-                            <p>Email : <a href="mailto:info@example.com">info@example.com</a></p>
-                            <p>Fax : +12 534894364</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-md-0 mt-4 footer-grid_section_1its">
-                        <div class="footer-title-w3ls">
-                            <h3>Quick Links</h3>
-                        </div>
-                        <div class="row">
-                            <ul class="col-6 links">
-                                <li><a href="/about">Why Choose Us </a></li>
-                                <li><a href="/about">Overview </a></li>
-                                <li><a href="/plans">Pricing Plans</a></li>
+                        <div class="form-group">
 
-                                <li><a href="/gallery">Gallery</a></li>
-                                <li><a href="/contact">Contact </a></li>
-                            </ul>
-                            <ul class="col-6 links">
-                                <li><a href="#">Privacy Policy </a></li>
-                                <li><a href="#">General Terms </a></li>
-                                <li><a href="#faq" class="scroll">Faq's </a></li>
-                                <li><a href="#">Knowledge </a></li>
-                                <li><a href="#">Forum </a></li>
-                            </ul>
+                            <label>Password*</label>
+                            <div class="icon2">
+                                <input placeholder="" name="password" type="password" required="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 mt-lg-0 mt-4 col-sm-12 footer-grid_section_1its" data-aos="fade-left">
-                        <div class="footer-title-w3ls">
-                            <h3>Newsletter</h3>
+                        <label class="anim">
+                            <input type="checkbox" class="checkbox" name="remember-me" value="true">
+                            <span>Remember Me</span>
+                            <a href="#">Forgot Password</a>
+                        </label>
+                        <div class="clearfix"></div>
+                        <input type="submit" value="Sign in">
+                        <p class="para-sign mt-3">Don’t know an Account ? <a href="/register" class="ml-2"><strong>Create
+                            your Account</strong></a></p>
+                    </form>
+
+                    <form action="/mobile/login" method="post" id="mobileLogin">
+                        <div class="form-group">
+
+                            <label>Phone Number*</label> &nbsp;&nbsp;<span style="color: red" id="error-span"></span>
+                            <div class="icon1">
+                                <input autocomplete="off" placeholder="" name="phone" id="phone" type="text" required="required" onfocus="handleException()">
+                            </div>
                         </div>
-                        <div class="footer-text">
-                            <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
-                            <form action="#" method="post">
-                                <input type="email" name="Email" placeholder="Enter your email..." required="">
-                                <button class="btn1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                                <div class="clearfix"> </div>
-                            </form>
+
+                        <div class="form-group">
+                            <label for="smsCode">Sms Code*</label>
+                            <div class="smsCode">
+                                <input id="smsCode" autocomplete="off" maxlength="6" minlength="6" placeholder=""
+                                       name="smsCode" type="text" required="required">
+                                <input id="btnSendCode" type="button" class="btn btn-default" value="Send" onclick="checkPhone()">
+                                <button type="button" id="codeContainer" hidden="hidden"></button>
+                            </div>
                         </div>
-                    </div>
+
+
+                        <label class="anim" id="rmfp">
+                            <input type="checkbox" class="checkbox" name="remember-me" value="true">
+                            <span>Remember Me</span>
+                            <a href="#">Forgot Password</a>
+                        </label>
+                        <div class="clearfix"></div>
+                        <input type="submit" value="Sign in">
+                        <p id="createAccount" class="para-sign mt-3">Don’t know an Account ? <a href="/register"
+                                                                                                class="ml-2"><strong>Create
+                            your Account</strong></a></p>
+                    </form>
+
                 </div>
-                <div class="footer-grid_section text-center">
-                    <div class="footer-title-w3ls mb-3" data-aos="fade-up">
-                        <a href="/index" class="text-uppercase"><i class="fa fa-ravelry" aria-hidden="true"></i> Slog</a>
+                <div class="col-lg-7 banner-w3layouts-image pl-md-5">
+                    <div class="effect-w3">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image1">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image2">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image3">
+                        <img src="../static/images/img4.jpg" alt="" class="img-fluid image4">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //banner-w3layouts -->
+</div>
+
+<!--footer -->
+<footer>
+    <section class="footer footer_1its py-5">
+        <div class="container py-md-4">
+
+            <div class="row footer-top mb-md-5 mb-4">
+                <div class="col-lg-4 col-md-6 footer-grid_section_1its" data-aos="fade-right">
+                    <div class="footer-title-w3ls">
+                        <h3>Address</h3>
                     </div>
                     <div class="footer-text">
-                        <p data-aos="fade-up">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ipnut libero malesuada feugiat. Lorem ipsum dolor sit amet, consectetur elit.</p>
+                        <p>Address : 1234 lock, Charlotte, North Carolina, United States</p>
+                        <p>Phone : +12 534894364</p>
+                        <p>Email : <a href="mailto:info@example.com">info@example.com</a></p>
+                        <p>Fax : +12 534894364</p>
                     </div>
-                    <ul class="social_section_1info" data-aos="fade-up">
-                        <li class="mb-2 facebook"><a href="#"><i class="fa fa-facebook mr-1"></i>facebook</a></li>
-                        <li class="mb-2 twitter"><a href="#"><i class="fa fa-twitter mr-1"></i>twitter</a></li>
-                        <li class="google"><a href="#"><i class="fa fa-google-plus mr-1"></i>google</a></li>
-                        <li class="linkedin"><a href="#"><i class="fa fa-linkedin mr-1"></i>linkedin</a></li>
-                    </ul>
                 </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4 footer-grid_section_1its">
+                    <div class="footer-title-w3ls">
+                        <h3>Quick Links</h3>
+                    </div>
+                    <div class="row">
+                        <ul class="col-6 links">
+                            <li><a href="/about">Why Choose Us </a></li>
+                            <li><a href="/about">Overview </a></li>
+                            <li><a href="/plans">Pricing Plans</a></li>
 
-            </div>
-        </section>
-    </footer>
-    <!-- //footer -->
-
-    <!-- copy-w3layoutsright -->
-    <div class="cpy-right text-center py-3">
-        <p class="copy-w3layouts">Copyright &copy; 2018.Company name All rights reserved.
-        </p>
-    </div>
-    <!-- //copy-w3layoutsright -->
-    <!--model-forms-->
-    <!--/Login-->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-left">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                            <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/contact">Contact </a></li>
+                        </ul>
+                        <ul class="col-6 links">
+                            <li><a href="#">Privacy Policy </a></li>
+                            <li><a href="#">General Terms </a></li>
+                            <li><a href="#faq" class="scroll">Faq's </a></li>
+                            <li><a href="#">Knowledge </a></li>
+                            <li><a href="#">Forum </a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="modal-body">
-
-                    <div class="login px-4 mx-auto mw-100">
-                        <h5 class="text-left mb-4">Login Now</h5>
+                <div class="col-lg-4 col-md-12 mt-lg-0 mt-4 col-sm-12 footer-grid_section_1its" data-aos="fade-left">
+                    <div class="footer-title-w3ls">
+                        <h3>Newsletter</h3>
+                    </div>
+                    <div class="footer-text">
+                        <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
                         <form action="#" method="post">
-                            <div class="form-group">
-                                <label class="mb-2">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label class="mb-2">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
-                            <p class="text-left pb-4">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalCenter2"> Don't have an account?</a>
-                            </p>
+                            <input type="email" name="Email" placeholder="Enter your email..." required="">
+                            <button class="btn1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                            <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
-
             </div>
+            <div class="footer-grid_section text-center">
+                <div class="footer-title-w3ls mb-3" data-aos="fade-up">
+                    <a href="/index" class="text-uppercase"><i class="fa fa-ravelry" aria-hidden="true"></i> Slog</a>
+                </div>
+                <div class="footer-text">
+                    <p data-aos="fade-up">Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla
+                        quis lorem ipnut libero malesuada feugiat. Lorem ipsum dolor sit amet, consectetur elit.</p>
+                </div>
+                <ul class="social_section_1info" data-aos="fade-up">
+                    <li class="mb-2 facebook"><a href="/oauth2/authorization/facebook"><i class="fa fa-facebook mr-1"></i>facebook</a></li>
+                    <li class="mb-2 twitter"><a href="/oauth2/authorization/twitter"><i class="fa fa-twitter mr-1"></i>twitter</a></li>
+                    <li class="google"><a href="/oauth2/authorization/google"><i class="fa fa-google mr-1"></i>google</a></li>
+<!--                    <li class="github"><a href="https://github.com/login/oauth/authorize?client_id=08d162b2ae5d485e228f&&state=github"><i class="fa fa-github-square mr-1"></i>github</a></li>-->
+                    <li class="github"><a href="/oauth2/authorization/github"><i class="fa fa-github-square mr-1"></i>github</a></li>
+                    <li class="instagram"><a href="#"><i class="fa fa-instagram mr-1"></i>instagram</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+</footer>
+<!-- //footer -->
+
+<!-- copy-w3layoutsright -->
+<div class="cpy-right text-center py-3">
+    <p class="copy-w3layouts">Copyright &copy; 2018.Company name All rights reserved.
+    </p>
+</div>
+<!-- //copy-w3layoutsright -->
+<!--model-forms-->
+<!--/Login-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="login px-4 mx-auto mw-100">
+                    <h5 class="text-left mb-4">Login Now</h5>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label class="mb-2">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="" required="">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label class="mb-2">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder=""
+                                   required="">
+                        </div>
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
+                        <p class="text-left pb-4">
+                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter2"> Don't have an
+                                account?</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!--//Login-->
-    <!--/Register-->
-    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-left">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="login px-4 mx-auto mw-100">
-                        <h5 class="text-left mb-4">Register Now</h5>
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label>First name</label>
-
-                                <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Last name</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="mb-2">Password</label>
-                                <input type="password" class="form-control" id="password1" placeholder="" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" class="form-control" id="password2" placeholder="" required="">
-                            </div>
-
-                            <button type="submit" class="btn btn-primary submit mb-4">Register</button>
-                            <p class="text-left pb-4">
-                                <a href="#">By clicking Register, I agree to your terms</a>
-                            </p>
-                        </form>
-
-                    </div>
-                </div>
-
+</div>
+<!--//Login-->
+<!--/Register-->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <div class="login px-4 mx-auto mw-100">
+                    <h5 class="text-left mb-4">Register Now</h5>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label>First name</label>
+
+                            <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="mb-2">Password</label>
+                            <input type="password" class="form-control" id="password1" placeholder="" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" id="password2" placeholder="" required="">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit mb-4">Register</button>
+                        <p class="text-left pb-4">
+                            <a href="#">By clicking Register, I agree to your terms</a>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+
         </div>
     </div>
-    <!--//Register--><script src="../static/js/jquery.min.js"></script>
-    <!--/aos -->
-    <script src="../static/js/aos.js"></script>
-    <script>
-        AOS.init({
-            easing: 'ease-out-back',
-            duration: 1000
-        });
+</div>
+<!--//Register-->
+<script src="../static/js/jquery.min.js" type="application/javascript"></script>
+<script src="../static/js/bootstrap.min.js" type="application/javascript"></script>
+<!--/aos -->
+<script src="../static/js/aos.js" type="application/javascript"></script>
+<script>
+    AOS.init({
+        easing: 'ease-out-back',
+        duration: 1000
+    });
 
-    </script>
-    <!--//aos -->
-    <!--/ start-smoth-scrolling -->
-    <script src="../static/js/move-top.js"></script>
-    <script src="../static/js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event) {
-                event.preventDefault();
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 900);
+</script>
+<!--//aos -->
+<!--/ start-smoth-scrolling -->
+<script src="../static/js/move-top.js" type="application/javascript"></script>
+<script src="../static/js/easing.js" type="application/javascript"></script>
+<script src="../static/js/crypto-js.js" type="application/javascript"></script>
+<script src="../static/js/ase.js" type="application/javascript"></script>
+<script src="../static/js/verify.js" type="application/javascript"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        if (!window.Promise) {
+            document.writeln('<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.min.js"><' + '/' + 'script>');
+        }
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 900);
+        });
+    });
+
+</script>
+<script>
+    var flag = 'form';
+    $(document).ready(function () {
+        /*
+                                var defaults = {
+                                      containerID: 'toTop', // fading element id
+                                    containerHoverID: 'toTopHover', // fading element hover id
+                                    scrollSpeed: 1200,
+                                    easingType: 'linear'
+                                 };
+                                */
+
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+        $("#mobileLogin").hide();
+    });
+
+    //切换手机登录 modal展示
+    function switchLogin() {
+        if (flag === 'form') {
+            $('#loginDesc').html("Form Login");
+            $("#formLogin").hide();
+            $("#mobileLogin").show();
+            $("#rmfp").hide();
+            $("#createAccount").hide();
+            flag = 'mobile';
+        } else {
+            $('#loginDesc').html("Mobile Login");
+            $("#formLogin").show();
+            $("#mobileLogin").hide();
+            $("#rmfp").show();
+            $("#createAccount").show();
+            flag = 'form';
+        }
+    }
+
+    function getSmsCode() {
+    }
+</script>
+
+<script>
+    var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;//手机号正则
+    var count = 60; //间隔函数，1秒执行
+    var InterValObj1; //timer变量，控制时间
+    var curCount1;//当前剩余秒数
+
+
+    function SetRemainTime1() {
+        if (curCount1 == 0) {
+            window.clearInterval(InterValObj1);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("重新发送");
+        }
+        else {
+            curCount1--;
+            $("#btnSendCode").val( + curCount1 + "秒再获取");
+        }
+    }
+
+    //校验手机号
+    function checkPhone() {
+        $('#mpanel').html("");
+        $('#codeContainer').html("");
+        var phone = $.trim($("#phone").val());
+        if(phoneReg.test(phone)) {
+            //1.图形滑动验证码校验 防止流量攻击
+            $('#mpanel').slideVerify({
+                baseUrl:'http://localhost:9000',  //服务器请求地址, 默认地址为安吉服务器;
+                mode:'pop',     //展示模式
+                containerId:'codeContainer',//pop模式 必填 被点击之后出现行为验证码的元素id
+                imgSize : {       //图片的大小对象,有默认值{ width: '310px',height: '155px'},可省略
+                    width: '400px',
+                    height: '200px',
+                },
+                barSize:{          //下方滑块的大小对象,有默认值{ width: '310px',height: '50px'},可省略
+                    width: '400px',
+                    height: '40px',
+                },
+                beforeCheck:function(){  //检验参数合法性的函数  mode ="pop"有效
+                    var flag = true;
+                    //实现: 参数合法性的判断逻辑, 返回一个boolean值
+                    return flag;
+                },
+                ready : function() {
+                },  //加载完毕的回调
+                success : function(params) { //成功的回调
+                    // params为返回的二次验证参数 需要在接下来的实现逻辑回传服务器
+                    //向后台发送处理数据
+                    var phone = $("#phone").val();
+                    $.ajax({
+                        url: '/getValidateCode',
+                        data: {
+                            'phone': phone
+                        },
+                        method: 'POST',
+                        success: function (data) {
+                            //3.校验成功开启定时 60s后才可以重新获取 同时应该是递减显示
+                            curCount1 = count;
+                            $("#btnSendCode").attr("disabled","true");
+                            $("#btnSendCode").val( + curCount1 + "秒再获取");
+                            InterValObj1 = window.setInterval(SetRemainTime1, 1000); //启动计时器，1秒执行一次
+                            $('#smsCode').focus();
+                        },
+                        error: function (error) {
+                            $('#error-span').html("user is not exist!");
+                        }
+                    }) ;
+                },
+                error : function() {}        //失败的回调
             });
-        });
+            $("#codeContainer").click();
+        }else{
+            $('#error-span').html("请输入正确的手机号!");
+            return false;
+        }
 
-    </script>
-    <script>
-        $(document).ready(function() {
-            /*
-            						var defaults = {
-            							  containerID: 'toTop', // fading element id
-            							containerHoverID: 'toTopHover', // fading element hover id
-            							scrollSpeed: 1200,
-            							easingType: 'linear' 
-            						 };
-            						*/
+    }
 
-            $().UItoTop({
-                easingType: 'easeOutQuart'
-            });
+    function handleException() {
+        $('#error-span').html("")
+    }
 
-        });
-
-    </script>
-    <!--// end-smoth-scrolling -->
-
-    <!-- //js -->
-
-    <script src="../static/js/bootstrap.min.js"></script>
+</script>
 
 </body>
 

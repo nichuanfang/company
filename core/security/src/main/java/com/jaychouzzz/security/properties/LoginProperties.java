@@ -10,7 +10,7 @@ import lombok.Data;
  * @Version 1.0
  */
 @Data
-public class LoginProperties {
+public class LoginProperties extends ErrorPageProperties{
     /**
      * 登录页面
      */
